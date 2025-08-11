@@ -45,33 +45,9 @@
                 </div>
               </div>
               <div class="product-hero_info_dropdowns_layout">
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Tasting Notes</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.tasting_notes" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.tasting_notes }}</div>
-                  </div>
-                </div>
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Allergens</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.allergens" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.allergens }}</div>
-                  </div>
-                </div>
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Delivery Information</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.delivery_information" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.delivery_information }}</div>
-                  </div>
-                </div>
+                {% render 'product_dropdown', product: product %}
+                {% render 'product_dropdown', product: product %}
+                {% render 'product_dropdown', product: product %}
               </div>
             </div>
             <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
