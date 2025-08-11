@@ -1,0 +1,94 @@
+<div class="product-hero_wrapper">
+          <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+            <div id="w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b" class="product-hero_info_layout">
+              <h1 class="product-hero_info_heading heading-style-h6 text-style-allcaps">THE FIRST SPIRIT HIGHLAND GIN</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+              <div class="product-header_form-block w-form">
+                {% form 'product', product, class: 'product-header_default-state' %}
+{% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+    
+                    <template x-for="(option, optionKey) in product.options" :key="optionKey">
+    <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
+                      <div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+    <label li-element="product-option-loop" class="product-header_radio w-radio">
+                          <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"><span li-element="product-option-name" class="w-form-label" for="radio" x-text="variantName" :for="variantName">£44 - 70cl bottle</span>
+                        </label></template></div>
+                    </div></template>
+                      </div>
+{% endif %}
+                  <div class="product-header_add-to-cart-wrapper">
+                    <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        <input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
+                      <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to cart</a>
+                      <a li-element="add-to-cart" href="#" class="button is-dark w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Buy Now</a>
+                            </div>
+    </template>
+                    <template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
+        
+                      <a href="#" class="product-header_out-of-stock_text w-button">Not in Stock</a>
+                            </div>
+    </template>
+                  </div>
+                {% endform %}
+                <div class="hide w-form-done">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="hide w-form-fail">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+              <div class="product-hero_info_dropdowns_layout">
+                <div class="product-hero_dropdown">
+                  <div class="product-hero_dropdown_toggle">
+                    <div>Tasting Notes</div>
+                    <div class="product-hero_dropdown-toggle_icon">+</div>
+                  </div>
+                  <div class="product-hero_dropdown_navigation">
+                    <div class="product-hero_dropdown_paragraph w-richtext">
+                      <p>A refreshing and light gin. Distilled using local botanicals, juniper berries, elderflower and hibiscus. With notes of citrus.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-hero_dropdown">
+                  <div class="product-hero_dropdown_toggle">
+                    <div>Allergens</div>
+                    <div class="product-hero_dropdown-toggle_icon">+</div>
+                  </div>
+                  <div class="product-hero_dropdown_navigation">
+                    <div class="product-hero_dropdown_paragraph w-richtext">
+                      <p>A refreshing and light gin. Distilled using local botanicals, juniper berries, elderflower and hibiscus. With notes of citrus.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-hero_dropdown">
+                  <div class="product-hero_dropdown_toggle">
+                    <div>Delivery Information</div>
+                    <div class="product-hero_dropdown-toggle_icon">+</div>
+                  </div>
+                  <div class="product-hero_dropdown_navigation">
+                    <div class="product-hero_dropdown_paragraph w-richtext">
+                      <p>A refreshing and light gin. Distilled using local botanicals, juniper berries, elderflower and hibiscus. With notes of citrus.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
+              <div class="product-hero_slider_slide"><img src="{{ 'image-31.webp' | asset_url }}" loading="lazy" width="519" sizes="(max-width: 767px) 100vw, 518.9931030273438px" alt="" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w" class="product-hero_slider_image"></div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Product-Hero",
+    "class": "product-hero_section",
+    "presets": [
+        {
+            "name": "Product-Hero",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
