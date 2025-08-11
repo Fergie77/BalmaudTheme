@@ -82,7 +82,7 @@
             </div>
             <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
               {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
-                                    <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" width="519" alt="{{ image.alt }}" sizes="(max-width: 767px) 100vw, 518.9931030273438px" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w">
+                                    <img src="{{ image.src | image_url: width: 1500 }}" loading="lazy" li-object:src="image.src | image_url: width: 1500" li-object:alt="image.alt" alt="{{ image.alt }}" class="product-hero_slider_image">
                         </div>
 {% endfor %}
             </div>
