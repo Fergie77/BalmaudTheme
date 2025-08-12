@@ -1,32 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "cask_hero": {
-            "type": "cask_hero"
-        },
-        "casks_intro": {
-            "type": "casks_intro"
-        },
-        "journey": {
-            "type": "journey"
-        },
-        "moment": {
-            "type": "moment"
-        },
-        "cask_options": {
-            "type": "cask_options"
-        },
-        "casks_sign_up": {
-            "type": "casks_sign_up"
-        }
+  "sections": {
+    "cask_hero": {
+      "type": "cask_hero",
+      "settings": {}
     },
-    "layout": "page.private-casks",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "cask_hero",
-        "casks_intro",
-        "journey",
-        "moment",
-        "cask_options",
-        "casks_sign_up"
-    ]
+    "casks_intro": {
+      "type": "casks_intro",
+      "settings": {}
+    },
+    "journey": {
+      "type": "journey",
+      "settings": {}
+    },
+    "moment": {
+      "type": "moment",
+      "settings": {}
+    },
+    "cask_options": {
+      "type": "cask_options",
+      "settings": {}
+    },
+    "casks_sign_up": {
+      "type": "casks_sign_up",
+      "settings": {}
+    }
+  },
+  "layout": "page.private-casks",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "cask_hero",
+    "casks_intro",
+    "journey",
+    "moment",
+    "cask_options",
+    "casks_sign_up"
+  ]
 }
