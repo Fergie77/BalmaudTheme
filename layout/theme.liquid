@@ -1,5 +1,7 @@
 <!doctype html>
-<meta charset="utf-8">
+<html data-wf-page="675c6140230093d4946dd468" data-wf-site="675c6140230093d4946dd46e" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
   <title>Balmaud</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
@@ -14,26 +16,14 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   
             {% if settings.favicon == blank %}
-              
-            {% if settings.favicon == blank %}
               <link href="{{ 'favicon.png' | asset_url }}" rel="shortcut icon" type="image/x-icon">
-            {% else %}
-              <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
-            {% endif %}
-        
             {% else %}
               <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
             {% endif %}
         
   
             {% if settings.apple_touch_icon == blank %}
-              
-            {% if settings.apple_touch_icon == blank %}
               <link href="{{ 'webclip.png' | asset_url }}" rel="apple-touch-icon">
-            {% else %}
-              <link rel="apple-touch-icon" type="image/png" href="{{ settings.apple_touch_icon | img_url: '32x32' }}">
-            {% endif %}
-        
             {% else %}
               <link rel="apple-touch-icon" type="image/png" href="{{ settings.apple_touch_icon | img_url: '32x32' }}">
             {% endif %}
@@ -47,8 +37,8 @@ opacity: 0;
 }
 </style>
   <script defer="" auto="" min="" src="https://cdn.jsdelivr.net/gh/liquify-pro/core@latest/script.js"></script>
-<script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}
-
+<script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
+<body>
   <div data-w-id="3f1e8c66-dc14-e31c-04fc-9dd7679fff78" style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="page-wrapper">
     <div class="global-styles w-embed">
       <style>
@@ -977,398 +967,12 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
 });
 
 </script>
-<script>
-    document.addEventListener('alpine:init', () => {
-
-    Alpine.data('handleMinicart', () => ({
-        init() {
-            console.log('handleMinicart init')
-        },
-        cart: {
-            note: null,
-            attributes: {},
-            items: [],
-            currency: window.Shopify.currency.active,
-            cart_level_discount_applications: [],
-            response: {
-                result : {},
-                show : false,
-                timeout : 5000,
-            },
-            item_count: 0,
-            total_price:0,
-            total_weight: 0,
-            total_discount: 0,
-            original_total_price: 0,
-            items_subtotal_price: 0
-        },
-        _abortController : null,
-        initAbortController() {
-            if(this._abortController) {
-                this._abortController.abort('abort previous request');
-            }
-            this._abortController = new AbortController()
-        },
-        getAbortControllerSignal() {
-            return this._abortController.signal
-        },
-        resetAbortController() {
-            this._abortController = null;
-        },
-        toggleMiniCart() {
-            console.log('(minicart.js) toggleMiniCart called');
-
-            LiquifyHelper.handleTriggerClick();
-
-            this.getCart();
-        },
-
-        /**
-         * Get the cart data.
-         */
-        async getCart() {
-            this.initAbortController()
-            await fetch(window.Shopify.routes.root + 'cart.js', {
-                method: 'GET',
-                signal: this.getAbortControllerSignal(),
-                headers: {'Content-Type': 'application/json'},
-            })
-                .then(response => response.json())
-                .then(data => {
-                    this.resetAbortController();
-
-                    this.cart.item_count = data.item_count;
-
-                    this.cart.items = data.items.map((item) => {
-                        item.title = this.htmlspecialchars_decode(item.title)
-                        return item
-                    })
-
-
-                    this.cart.total_price = data.total_price;
-                    this.cart.total_weight = data.total_weight;
-                    this.cart.total_discount = data.total_discount;
-
-                    this.$dispatch('carttotalitems', data.item_count);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        },
-
-        /**
-         * @param key
-         * @param quantity
-         */
-        increaseCartItemQuantity(key, quantity) {
-            this.updateCartItemQuantity(key, parseInt(quantity) + 1);
-        },
-
-        /**
-         * @param key
-         * @param quantity
-         */
-        decreaseCartItemQuantity(key, quantity) {
-            this.updateCartItemQuantity(key, parseInt(quantity) - 1);
-        },
-
-        /**
-         * Update the cart item.
-         *
-         * @param key
-         * @param quantity
-         */
-        updateCartItemQuantity(key, quantity) {
-            this.initAbortController();
-            console.log('updateCartItemQuantity(): key, quantity: ', key, quantity);
-            this.cart.items.filter((product)  => {
-                if(product.key === key) {
-                    product.quantity = quantity
-                }
-            })
-            let updates = {};
-            updates[key] = quantity;
-            fetch(window.Shopify.routes.root + 'cart/update.js', {
-                method: 'POST',
-                signal: this.getAbortControllerSignal(),
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ updates }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    this.resetAbortController();
-                    console.log('updateCartItemQuantity(): ', data);
-
-                    this.$dispatch('cartupdated');
-                    this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
-                });
-        },
-
-        /**
-         * Format monetary values.
-         */
-        moneyFormat(value, minor = true) {
-            return LiquifyHelper.moneyFormat(value, minor)
-        },
-
-        htmlspecialchars_decode(string) {
-            return LiquifyHelper.htmlspecialchars_decode(string)
-        },
-
-        /**
-         * Shows the minicart api message
-         * @param event
-         */
-        showCartMessage(event) {
-            //console.log("dispatched showCartMessage", event)
-            if(event?.detail?.status) {
-                this.cart.response.result = event.detail ?? {}
-                this.cart.response.show = true
-                setTimeout(() => {
-                    this.cart.response.result = {};
-                    this.cart.response.show = false
-                }, this.cart.response.timeout ?? 5000)
-            }
-        },
-
-        async returnCartItems() {
-            await this.getCart();
-
-            this.$dispatch('currentcartitems', this.cart.items);
-        },
-
-        /**
-         * @deprecated
-         */
-        set open(open) { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "set open" in mini_cart')
-        },
-        /**
-         * @deprecated
-         */
-        get open() { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "get open" in mini_cart')
-            return false;
-        },
-        /**
-         * @deprecated
-         */
-        set note(note) { // deprecated
-            //console.warn('Deprecated "set note" in mini_cart')
-            this.cart.note = note;
-        },
-        /**
-         * @deprecated
-         */
-        get note() { // deprecated
-            //console.warn('Deprecated "get note" in mini_cart')
-            return this.cart.note;
-        },
-        /**
-         * @deprecated
-         */
-        set attributes(attributes) { // deprecated
-            //console.warn('Deprecated "set attributes" in mini_cart')
-            this.cart.attributes = attributes;
-        },
-        /**
-         * @deprecated
-         */
-        get attributes() { // deprecated
-            //console.warn('Deprecated "get attributes" in mini_cart')
-            return this.cart.attributes;
-        },
-        /**
-         * @deprecated
-         */
-        set original_total_price(original_total_price) { //deprecated
-            //console.warn('Deprecated "set original_total_price" in mini_cart')
-            this.cart.original_total_price = original_total_price;
-        },
-        /**
-         * @deprecated
-         */
-        get original_total_price() { //deprecated
-            //console.warn('Deprecated "get original_total_price" in mini_cart')
-            return this.cart.original_total_price;
-        },
-        /**
-         * @deprecated
-         */
-        set total_price(total_price) { //deprecated
-            //console.warn('Deprecated "set total_price" in mini_cart')
-            this.cart.total_price = total_price;
-        },
-        /**
-         * @deprecated
-         */
-        get total_price() { //deprecated
-            //console.warn('Deprecated "get total_price" in mini_cart')
-            return this.cart.total_price;
-        },
-        /**
-         * @deprecated
-         */
-        set total_discount(total_discount) { //deprecated
-            //console.warn('Deprecated "set total_discount" in mini_cart')
-            this.cart.total_discount = total_discount;
-        },
-        /**
-         * @deprecated
-         */
-        get total_discount() { //deprecated
-            //console.warn('Deprecated "get total_discount" in mini_cart')
-            return this.cart.total_discount;
-        },
-        /**
-         * @deprecated
-         */
-        set total_weight(total_weight) { //deprecated
-            //console.warn('Deprecated "set total_weight" in mini_cart')
-            this.cart.total_discount = total_weight;
-        },
-        /**
-         * @deprecated
-         */
-        get total_weight() { //deprecated
-            //console.warn('Deprecated "get total_weight" in mini_cart')
-            return this.cart.total_weight;
-        },
-        /**
-         * @deprecated
-         */
-        set item_count(item_count) { //deprecated
-            //console.warn('Deprecated "set item_count" in mini_cart')
-            this.cart.total_discount = item_count;
-        },
-        /**
-         * @deprecated
-         */
-        get item_count() { //deprecated
-            //console.warn('Deprecated "get item_count" in mini_cart')
-            return this.cart.item_count;
-        },
-        /**
-         * @deprecated
-         */
-        set items_subtotal_price(items_subtotal_price) { //deprecated
-            //console.warn('Deprecated "set items_subtotal_price" in mini_cart')
-            this.cart.items_subtotal_price = items_subtotal_price;
-        },
-        /**
-         * @deprecated
-         */
-        get items_subtotal_price() { //deprecated
-            //console.warn('Deprecated "get items_subtotal_price" in mini_cart')
-            return this.cart.items_subtotal_price;
-        },
-        /**
-         * @deprecated
-         */
-        set products(products) {
-            //console.warn('Deprecated "set products" in mini_cart')
-            this.cart.items = products;
-        },
-        /**
-         * @deprecated
-         */
-        get products() {
-            //console.warn('Deprecated "get products" in mini_cart')
-            return this.cart.items;
-        },
-        /**
-         * @deprecated
-         */
-        set requires_shipping(requires_shipping) {
-            //console.warn('Deprecated "set requires_shipping" in mini_cart')
-        },
-        /**
-         * @deprecated
-         */
-        get requires_shipping() {
-            //console.warn('Deprecated "get requires_shipping" in mini_cart')
-            return false;
-        },
-        /**
-         * @deprecated
-         */
-        set currency(currency) { //deprecated
-            //console.warn('Deprecated "set currency" in mini_cart')
-            this.cart.currency = currency;
-        },
-        /**
-         * @deprecated
-         */
-        get currency() { //deprecated
-            //console.warn('Deprecated "get currency" in mini_cart')
-            return this.cart.currency;
-        },
-        /**
-         * @deprecated
-         */
-        set cart_level_discount_applications(cart_level_discount_applications) { //deprecated
-            //console.warn('Deprecated "set cart_level_discount_applications" in mini_cart')
-            this.cart.cart_level_discount_applications = cart_level_discount_applications;
-        },
-        /**
-         * @deprecated
-         */
-        get cart_level_discount_applications() { //deprecated
-            //console.warn('Deprecated "get cart_level_discount_applications" in mini_cart')
-            return this.cart.cart_level_discount_applications;
-        },
-        /**
-         * @deprecated
-         */
-        set cartApiResponse(cartApiResponse) { //deprecated
-            //console.warn('Deprecated "set cartApiResponse" in mini_cart')
-            this.cart.cartApiResponse = cartApiResponse;
-        },
-        /**
-         * @deprecated
-         */
-        get cartApiResponse() { //deprecated
-            //console.warn('Deprecated "get cartApiResponse" in mini_cart')
-            return this.cart.response;
-        },
-        /**
-         * @deprecated
-         */
-        set total(total) { //deprecated
-            //console.warn('Deprecated "set total" in mini_cart')
-            this.cart.item_count = total.items;
-            this.cart.total_price = total.price;
-            this.cart.total_weight = total.weight;
-            this.cart.total_discount = total.discount;
-        },
-        /**
-         * @deprecated
-         */
-        get total() { //deprecated
-            //console.warn('Deprecated "get total" in mini_cart')
-            return {
-                items: this.cart.item_count,
-                price: this.cart.total_price,
-                weight: this.cart.total_weight,
-                discount: this.cart.total_discount,
-            };
-        }
-    }))
-
-
-});
-
-</script>
 <div data-hover="false" data-delay="0" li-element="mini-cart" class="nav_dropdown w-dropdown" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage" @getcartitems.window="returnCartItems">
                   <div li-element="mini-cart-toggle" class="nav_shop-icon w-dropdown-toggle" @click="$dispatch('cartupdated.window')"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 21 18" fill="none" class="nav_basket">
                       <path d="M16.5947 17.3032H3.63969L0 6.05322H20.2341L16.5947 17.3032ZM4.09469 16.6782H16.14L19.3753 6.67822H0.859375L4.09469 16.6782Z" fill="currentColor"></path>
                       <path d="M6.7018 0L7.28242 0.232188L4.7818 6.48156L4.20117 6.24938L6.7018 0ZM13.5324 0L16.0324 6.25L15.4518 6.4825L12.9518 0.232188L13.5324 0ZM7.30461 11.6781H12.9296V12.3031H7.30461V11.6781Z" fill="currentColor"></path>
                     </svg>
-                    <div li-element="mini-cart-item-count" class="nav_shop-quantity" x-data="{ items: 0 }" x-text="items" event.detail="" @carttotalitems.window="items = event.detail">1</div>
+                    <div li-element="mini-cart-item-count" class="nav_shop-quantity" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">1</div>
                   </div>
                   <nav li-element="mini-cart-container" class="nav_mini-cart-holder w-dropdown-list" :class="open || 'mini-cart-closed'">
                     <div li-element="dropdown-toggle" class="nav_mini-cart-close" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div>
@@ -1377,7 +981,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                         <div class="mini-cart_header">
                           <div class="mini-cart_heading_wrapper">
                             <div class="mini-cart_heading">Basket</div>
-                            <div li-element="mini-cart-item-count" class="mini-cart_quantity" x-data="{ items: 0 }" x-text="items" event.detail="" @carttotalitems.window="items = event.detail">1</div>
+                            <div li-element="mini-cart-item-count" class="mini-cart_quantity" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">1</div>
                           </div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
                             <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
@@ -1387,7 +991,6 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                         <div class="mini-cart_line-item no-scrollbar">
                           <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
                             <template x-for="product in products" :key="product.key">
-    <template x-for="product in products" :key="product.key">
     <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="images/PRODUCT_PLACEHOLDER.webp" alt="" sizes="100vw" loading="lazy" srcset="{{ 'PRODUCT_PLACEHOLDER-p-500.webp' | asset_url }} 500w, {{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }} 649w" x-bind:src="product.image">
                               <div class="mini-cart_line-item_product-info">
                                 <div class="mini-cart_line-item_title_wrapper">
@@ -1397,22 +1000,19 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                                 <div id="w-node-_65d74550-f98c-160e-50c6-38dce390f575-e390f55f" class="mini-cart_line-item_price">
                                   <div li-js-price="product.price" class="text-size-small" x-text="LiquifyHelper.moneyFormat(product.price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
                                   <template x-if="product.price < product.original_price">
-            <template x-if="product.price < product.original_price">
             <div li-js-if="product.price < product.original_price">
         
-        
                                     <div li-js-price="product.original_price" class="text-size-small text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(product.original_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                                                  </div>
-    </template>
+                                          </div>
     </template>
                                 </div>
                                 <div id="w-node-_65d74550-f98c-160e-50c6-38dce390f57b-e390f55f" class="mini-cart_line-item_quantity">
-                                  <a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" product:="" product.key="" quantity:="" product.quantity="" action:="" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })">-</a><input li-element="mini-cart-item-quantity" class="mini-cart_line-item_quantity-adjust" value="1" :productprop="product" product:="" product.key="" quantity:="" product.quantity="" x-model="product.quantity" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })">
-                                  <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" product:="" product.key="" quantity:="" product.quantity="" action:="" @click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })">+</a>
+                                  <a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })">-</a><input li-element="mini-cart-item-quantity" class="mini-cart_line-item_quantity-adjust" value="1" :productprop="product" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })" x-model="product.quantity">
+                                  <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })">+</a>
                                 </div>
-                                <div li-element="mini-cart-item-remove" id="w-node-_65d74550-f98c-160e-50c6-38dce390f581-e390f55f" class="text-size-tiny text-color-grey" :productprop="product" product:="" product.key="" quantity:="" @click="$dispatch('setcartitem', { product: product.key, quantity: 0 })">Remove</div>
+                                <div li-element="mini-cart-item-remove" id="w-node-_65d74550-f98c-160e-50c6-38dce390f581-e390f55f" class="text-size-tiny text-color-grey" :productprop="product" @click="$dispatch('setcartitem', { product: product.key, quantity: 0 })">Remove</div>
                               </div>
-                            </li></template></template>
+                            </li></template>
                           </ul>
                           <div class="mini-cart_shipping-info_wrapper">
                             <p>Free shipping on orders over £100</p>
@@ -1424,13 +1024,10 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                             <div class="mini-cart_footer-price">
                               <div li-js-price="total.price" x-text="LiquifyHelper.moneyFormat(total.price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
                               <template x-if="total.price < original_total_price">
-            <template x-if="total.price < original_total_price">
             <div li-js-if="total.price < original_total_price" class="mini-cart_conditional">
         
-        
                                 <div li-js-price="original_total_price" class="text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(original_total_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                                              </div>
-    </template>
+                                      </div>
     </template>
                             </div>
                           </div>
@@ -1604,3 +1201,5 @@ if(ageGate){
     });
   });
 </script>
+</body>
+</html>
