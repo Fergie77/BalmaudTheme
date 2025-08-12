@@ -1,0 +1,36 @@
+{
+    "sections": {
+        "home_hero": {
+            "type": "home_hero"
+        },
+        "legacy": {
+            "type": "legacy"
+        },
+        "detail_divider": {
+            "type": "detail_divider"
+        },
+        "blog": {
+            "type": "blog"
+        },
+        "manifesto": {
+            "type": "manifesto"
+        },
+        "legacy_casks": {
+            "type": "legacy_casks"
+        },
+        "manifesto_2": {
+            "type": "manifesto_2"
+        }
+    },
+    "layout": "page.new-home",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "home_hero",
+        "legacy",
+        "detail_divider",
+        "blog",
+        "manifesto",
+        "legacy_casks",
+        "manifesto_2"
+    ]
+}
