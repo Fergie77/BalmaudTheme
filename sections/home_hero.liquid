@@ -15,7 +15,9 @@
               <p class="hero_detail-text">Single estate distillery</p>
               <p class="hero_detail-text">Single estate distillery</p>
               <p class="hero_detail-text">Single estate distillery</p>
-            </div><img src="{{ 'HERO_BOTTLE.webp' | asset_url }}" loading="lazy" id="w-node-b1c99b58-305b-b9b1-9557-f679258ad671-b972f49a" sizes="(max-width: 767px) 100vw, 530.9896240234375px" alt="" srcset="{{ 'HERO_BOTTLE-p-500.webp' | asset_url }} 500w, {{ 'HERO_BOTTLE.webp' | asset_url }} 531w" class="hero_bottle_image">
+            </div>{% if section.settings.checkbox_show_bottle == true %}
+<img class="hero_bottle_image" src="{{ 'HERO_BOTTLE.webp' | asset_url }}" alt="" sizes="(max-width: 767px) 100vw, 530.9896240234375px" id="w-node-b1c99b58-305b-b9b1-9557-f679258ad671-b972f49a" loading="lazy" srcset="{{ 'HERO_BOTTLE-p-500.webp' | asset_url }} 500w, {{ 'HERO_BOTTLE.webp' | asset_url }} 531w">
+{% endif %}
           </div><img class="hero_background-content" src="{{ 'image-30.webp' | asset_url }}" balmaud-animation="content-fade-in" alt="" sizes="100vw" loading="lazy" srcset="{{ 'image-30-p-500.webp' | asset_url }} 500w, {{ 'image-30-p-800.webp' | asset_url }} 800w, {{ 'image-30-p-1080.webp' | asset_url }} 1080w, {{ 'image-30-p-1600.webp' | asset_url }} 1600w, {{ 'image-30-p-2000.webp' | asset_url }} 2000w, {{ 'image-30-p-2600.webp' | asset_url }} 2600w, {{ 'image-30.webp' | asset_url }} 2880w">
         </div> {% schema %} {
     "tag": "section",
@@ -44,6 +46,17 @@
             "id": "url_link",
             "type": "url",
             "label": "Link"
+        },
+        {
+            "id": "checkbox_show_bottle",
+            "type": "checkbox",
+            "label": "Show Bottle",
+            "default": true
+        },
+        {
+            "id": "image_bottle_render",
+            "type": "image_picker",
+            "label": "Bottle Render"
         }
     ],
     "presets": [
