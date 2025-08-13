@@ -1,10 +1,14 @@
 <div class="hero_wrapper">
           <div class="hero_layout">
             <div id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce73-b972f49a" class="hero_info_layout">
-              <h1 data-stagger="0.05" balmaud-animation="split-fade-in" id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce76-b972f49a" class="hero_heading heading-style-h1">Nothing Ordinary</h1>
+              <h1 balmaud-animation="split-fade-in" data-stagger="0.05" id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce76-b972f49a" class="hero_heading heading-style-h1">
+{{ section.settings.text_heading }}
+</h1>
               <div id="w-node-_39410b78-9b1c-c55d-1116-ca9ce790afed-b972f49a" class="hero_info_bottom_layout">
-                <p class="hero_info_paragraph text-color-white">THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE</p>
-                <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="base" href="#" class="button w-button">Shop now</a>
+                <p class="hero_info_paragraph text-color-white">
+{{ section.settings.text_paragraph }}
+</p>
+                <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="base" href="{{ section.settings.url_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
               </div>
             </div>
             <div id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce78-b972f49a" class="hero_detail-text_wrapper">
@@ -17,6 +21,31 @@
     "tag": "section",
     "name": "Home Hero",
     "class": "hero_section",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Nothing Ordinary"
+        },
+        {
+            "id": "text_paragraph",
+            "type": "text",
+            "label": "Paragraph",
+            "default": "THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Shop now"
+        },
+        {
+            "id": "url_link",
+            "type": "url",
+            "label": "Link"
+        }
+    ],
     "presets": [
         {
             "name": "Home Hero",
