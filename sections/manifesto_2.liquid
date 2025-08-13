@@ -1,12 +1,24 @@
 <div class="manifesto_wrapper">
           <div class="manifesto_layout">
-            <div id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb853-b972f49a" class="manifesto_image_wrapper"><img src="{{ 'image-31.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w" alt="" class="manifesto_image is-absolute"></div>
-            <p id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb857-b972f49a" class="manifesto_paragraph shift-left">Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.</p>
-            <h2 id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb859-b972f49a" class="manifesto_heading heading-style-h4">Find your Unordinary way to drink</h2>
+            <div id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb853-b972f49a" class="manifesto_image_wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'manifesto_image is-absolute', sizes: '100vw', loading: 'lazy' }}
+{% else %}
+<img class="manifesto_image is-absolute" src="{{ 'image-31.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w">
+{% endif %}</div>
+            <p id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb857-b972f49a" class="manifesto_paragraph shift-left">
+{{ section.settings.text_paragraph }}
+</p>
+            <h2 id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb859-b972f49a" class="manifesto_heading heading-style-h4">
+{{ section.settings.text_heading }}
+</h2>
             <div id="w-node-_8f4e6501-85b1-45e7-a50d-e5cf10f2a6ad-b972f49a">
-              <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="dark" href="#" class="button w-variant-d7c74874-d81d-8c57-eccd-cec55a1b1e41 w-button">Shop now</a>
+              <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="dark" href="{{ section.settings.url_link }}" class="button w-variant-d7c74874-d81d-8c57-eccd-cec55a1b1e41 w-button"> {{ section.settings.text_button_text }} </a>
             </div>
-            <div id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb85b-b972f49a" class="manifesto_image_wrapper"><img src="{{ 'image-31.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w" alt="" class="manifesto_image">
+            <div id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb85b-b972f49a" class="manifesto_image_wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'manifesto_image', sizes: '100vw', loading: 'lazy' }}
+{% else %}
+<img class="manifesto_image" src="{{ 'image-31.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'image-31-p-500.webp' | asset_url }} 500w, {{ 'image-31-p-800.webp' | asset_url }} 800w, {{ 'image-31.webp' | asset_url }} 1038w">
+{% endif %}
               <div class="manifesto_vertical-text_wrapper">
                 <p class="manifesto_vertical-text_item">FAMILY GROWN FOR THREE<br> GENERATIONS, THIS IS OUR SPIRIT.</p>
                 <p class="manifesto_vertical-text_item">NEW TO DISTILLING<br>NOT TO BARLEY</p>
@@ -18,6 +30,36 @@
     "tag": "section",
     "name": "Manifesto 2",
     "class": "manifesto_section",
+    "settings": [
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "text_paragraph",
+            "type": "text",
+            "label": "Paragraph",
+            "default": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass."
+        },
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Find your Unordinary way to drink"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Shop now"
+        },
+        {
+            "id": "url_link",
+            "type": "url",
+            "label": "Link"
+        }
+    ],
     "presets": [
         {
             "name": "Manifesto 2",

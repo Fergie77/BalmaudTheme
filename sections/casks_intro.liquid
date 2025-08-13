@@ -1,12 +1,26 @@
 <div class="casks-intro_wrapper">
           <div class="casks-intro_layout">
-            <h2 data-stagger="0.05" balmaud-animation="split-fade-in" id="w-node-_7fbd3b5a-74a0-2f85-e0a0-75a9c11ee3bd-777000c8" class="casks-intro_heading">Our first drops of spirit</h2><img class="casks-intro_image" src="{{ 'April_balmaud_shoot-5-1.webp' | asset_url }}" balmaud-animation="fade-in" alt="" sizes="(max-width: 991px) 100vw, 895.9896240234375px" id="w-node-_0e2e48f3-8e35-e1b1-8899-538caed3e31f-777000c8" loading="lazy" srcset="{{ 'April_balmaud_shoot-5-1-p-500.webp' | asset_url }} 500w, {{ 'April_balmaud_shoot-5-1-p-800.webp' | asset_url }} 800w, {{ 'April_balmaud_shoot-5-1.webp' | asset_url }} 896w">
+            <h2 balmaud-animation="split-fade-in" data-stagger="0.05" id="w-node-_7fbd3b5a-74a0-2f85-e0a0-75a9c11ee3bd-777000c8" class="casks-intro_heading">
+{{ section.settings.text_heading }}
+</h2>{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'casks-intro_image', balmaud-animation: 'fade-in', sizes: '(max-width: 991px) 100vw, 895.9896240234375px', id: 'w-node-_0e2e48f3-8e35-e1b1-8899-538caed3e31f-777000c8', loading: 'lazy' }}
+{% else %}
+<img class="casks-intro_image" src="{{ 'April_balmaud_shoot-5-1.webp' | asset_url }}" balmaud-animation="fade-in" alt="" sizes="(max-width: 991px) 100vw, 895.9896240234375px" id="w-node-_0e2e48f3-8e35-e1b1-8899-538caed3e31f-777000c8" loading="lazy" srcset="{{ 'April_balmaud_shoot-5-1-p-500.webp' | asset_url }} 500w, {{ 'April_balmaud_shoot-5-1-p-800.webp' | asset_url }} 800w, {{ 'April_balmaud_shoot-5-1.webp' | asset_url }} 896w">
+{% endif %}
             <div id="w-node-_6084d726-302c-75ac-6a7d-f395c31f194d-777000c8" class="casks-intro_info">
-              <h3 balmaud-animation="fade-in" id="w-node-_1dbf9708-1607-3f62-9438-e165717fef33-777000c8" class="casks-intro_info_heading">Welcome to the family</h3>
+              <h3 balmaud-animation="fade-in" id="w-node-_1dbf9708-1607-3f62-9438-e165717fef33-777000c8" class="casks-intro_info_heading">
+{{ section.settings.text_heading }}
+</h3>
               <div id="w-node-_2a514c40-d992-46ed-69e7-603e6f8a44b5-777000c8" class="casks-intro_info_paragraph_wrapper">
-                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">To mark the launch of Balmaud, we are offering a limited number of private casks — each one representing a rare opportunity to own a piece of our earliest spirit.</p>
-                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">This isn’t just a purchase. It’s a moment in time. A chance to shape the first chapter of our story — and to enjoy something deeply personal, deeply rooted.<br></p>
-                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">This is a chance for you to mark a special moment, be that the birth of family member, an anniversary, a special occasion, or your discovery and partnership with our distillery.</p>
+                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">
+{{ section.settings.text_paragraph_1 }}
+</p>
+                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">
+{{ section.settings.text_paragraph_2 }}
+</p>
+                <p balmaud-animation="fade-in" class="casks-intro_info_paragraph">
+{{ section.settings.text_paragraph_3 }}
+</p>
               </div>
               <p balmaud-animation="fade-in" id="w-node-e0b0b4c0-e5b2-df63-3d23-b5f9ce6bb024-777000c8" class="casks-intro_info_detail-text">FAMILY GROWN FOR THREE GENERATIONS, THIS IS OUR SPIRIT.</p>
               <p balmaud-animation="fade-in" id="w-node-_72bed7b5-bd4d-63e8-cef6-518be7ce5dae-777000c8" class="casks-intro_info_detail-text">Old school farmers<br>New school distillers</p>
@@ -44,6 +58,37 @@
     "tag": "section",
     "name": "Casks Intro",
     "class": "casks-intro_section",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Our first drops of spirit"
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "text_paragraph_1",
+            "type": "text",
+            "label": "Paragraph 1",
+            "default": "To mark the launch of Balmaud, we are offering a limited number of private casks \u2014 each one representing a rare opportunity to own a piece of our earliest spirit."
+        },
+        {
+            "id": "text_paragraph_2",
+            "type": "text",
+            "label": "Paragraph 2",
+            "default": "This isn\u2019t just a purchase. It\u2019s a moment in time. A chance to shape the first chapter of our story \u2014 and to enjoy something deeply personal, deeply rooted.<br\/>"
+        },
+        {
+            "id": "text_paragraph_3",
+            "type": "text",
+            "label": "Paragraph 3",
+            "default": "This is a chance for you to mark a special moment, be that the birth of family member, an anniversary, a special occasion, or your discovery and partnership with our distillery."
+        }
+    ],
     "presets": [
         {
             "name": "Casks Intro",
