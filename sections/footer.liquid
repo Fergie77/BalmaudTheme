@@ -20,16 +20,29 @@
               
                         </div>
 {% endfor %}
-              <a href="private-casks.html" class="footer_form_link">Private Casks</a>
             </div>
             <div id="w-node-d6646beb-e906-781e-137d-1683b06e37b4-b06e379e" class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Contact</h3>
-              <a href="mailto:casks@balmauddistillery.com" class="footer_form_link">Casks@balmauddistillery.com</a>
+              {% for link in linklists['contact'].links %}    <div li-for="link in linklists['contact'].links">
+                                    
+                
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
+                            
+              
+                        </div>
+{% endfor %}
               <a href="tel:+441888531100" class="footer_form_link">+44 (0) 1888 531 100</a>
             </div>
             <div class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Follow Us</h3>
-              <a href="https://www.instagram.com/balmauddistillery/" target="_blank" class="footer_form_link">Instagram</a>
+              {% for link in linklists['socials'].links %}    <div li-for="link in linklists['socials'].links">
+                                    
+                
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
+                            
+              
+                        </div>
+{% endfor %}
               <a href="https://www.facebook.com/profile.php?id=61573614944336" target="_blank" class="footer_form_link">Facebook</a>
               <a href="https://www.linkedin.com/company/balmaud-distillery/" target="_blank" class="footer_form_link">Linkedin</a>
             </div>
