@@ -12,7 +12,14 @@
           <div id="w-node-d6646beb-e906-781e-137d-1683b06e37aa-b06e379e" class="footer_form_links_wrapper">
             <div class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Information</h3>
-              <a href="about.html" class="footer_form_link">About</a>
+              {% for link in linklists['information'].links %}    <div li-for="link in linklists['information'].links">
+                                    
+                
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
+                            
+              
+                        </div>
+{% endfor %}
               <a href="private-casks.html" class="footer_form_link">Private Casks</a>
             </div>
             <div id="w-node-d6646beb-e906-781e-137d-1683b06e37b4-b06e379e" class="footer_form_links_layout">
