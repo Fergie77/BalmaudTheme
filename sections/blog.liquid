@@ -1,23 +1,22 @@
 <div class="blog_wrapper">
           <div class="padding-global">
             <div class="blog_layout">
+              <div class="blog_item"><img src="{{ article.image | image_url: width: 1000 }}" loading="lazy" li-object:src="article.image | image_url: width: 1000" alt="" class="blog_item_image">
+                <h2 li-object="article.title" class="blog_item_heading text-size-large text-style-allcaps">{{ article.title }}</h2>
+                <p class="blog_item_paragraph">At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br></p>
+                <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
+                  <p>
+{{ section.settings.text_button_text }}
+</p>
+                  <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"> </a>
+                </div>
+              </div>
               {% for block in section.blocks %}
     {% if block.type == "blog-block" %}
                     <div li-block="Blog Block" class="blog_block">
                                     
                 
-                                    <div class="blog_liquify-article_settings">{% assign article = articles[block.settings.article_article] %} 
-                  <div class="blog_item"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" li-object="article.image | image_url: width: 1000" alt="" class="blog_item_image">
-                    <h2 li-object="article.title" class="blog_item_heading text-size-large text-style-allcaps">{{ article.title }}</h2>
-                    <p class="blog_item_paragraph">At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br></p>
-                    <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
-                      <p>
-{{ block.settings.text_button_text }}
-</p>
-                      <a href="{{ block.settings.url_link }}" class="button_link w-inline-block"> </a>
-                    </div>
-                  </div>
-                </div>
+                                    <div class="blog_liquify-article_settings">{% assign article = articles[block.settings.article_article] %} </div>
                                     
               
                             </div>
@@ -38,19 +37,21 @@
                     "id": "article_article",
                     "type": "article",
                     "label": "Article"
-                },
-                {
-                    "id": "text_button_text",
-                    "type": "text",
-                    "label": "Button Text",
-                    "default": "Shop Now"
-                },
-                {
-                    "id": "url_link",
-                    "type": "url",
-                    "label": "Link"
                 }
             ]
+        }
+    ],
+    "settings": [
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Shop Now"
+        },
+        {
+            "id": "url_link",
+            "type": "url",
+            "label": "Link"
         }
     ],
     "presets": [
