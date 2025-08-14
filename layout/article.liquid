@@ -1218,5 +1218,47 @@ if(ageGate){
     });
   });
 </script>
+  <script>
+  (function () {
+    const LOCALHOST_URL = [
+      'http://localhost:5173/@vite/client',
+      'http://localhost:5173/src/main.js',  // Updated path
+    ]
+    const PROD_URL = ['https://balmaud.netlify.app/main.js']  // Updated path
+    function createScripts(arr, isDevMode) {
+      return arr.map(function (url) {
+        const s = document.createElement('script')
+        s.src = url
+        s.type = isDevMode ? 'module' : 'text/javascript'
+        return s
+      })
+    }
+    function insertScript(scriptArr) {
+      scriptArr.forEach(function (script) {
+        document.body.appendChild(script)
+      })
+    }
+    const localhostScripts = createScripts(LOCALHOST_URL, true)
+    const prodScripts = createScripts(PROD_URL, false)  // Changed to false for production
+    let choosedScripts = null
+    fetch(LOCALHOST_URL[0], {
+      method: 'HEAD',
+      mode: 'cors'
+    })
+      .then(() => {
+        console.log('Development mode')
+        choosedScripts = localhostScripts
+      })
+      .catch((e) => {
+        console.log('Production mode')
+        choosedScripts = prodScripts
+      })
+      .finally(() => {
+        if (choosedScripts) {
+          insertScript(choosedScripts)
+        }
+      })
+  })()
+</script>
 </body>
 </html>
