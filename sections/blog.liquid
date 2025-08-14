@@ -9,7 +9,9 @@
                                     <div class="blog_liquify-article_settings">{% assign article = articles[block.settings.article_article] %} 
                   <div class="blog_item"><img src="{{ article.image | img_url: 'master' | placeholder: 'detailed-apparel-1' }}" loading="lazy" li-object:src="article.image | img_url: 'master' | placeholder: 'detailed-apparel-1'" alt="" class="blog_item_image">
                     <h2 li-object="article.title" class="blog_item_heading text-size-large text-style-allcaps">{{ article.title }}</h2>
-                    <p li-object="article.excerpt" class="blog_item_paragraph">{{ article.excerpt }}</p>
+                    <div class="blog_item_paragraph">
+                      <p li-object="article.excerpt" class="blog_item_paragraph">{{ article.excerpt }}</p>
+                    </div>
                     <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
                       <p>
 {{ block.settings.text_button_text }}
