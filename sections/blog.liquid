@@ -1,32 +1,52 @@
 <div class="blog_wrapper">
           <div class="padding-global">
             <div class="blog_layout">
-              <div li-settings="article" class="blog_item">
+              {% for block in section.blocks %}
+    {% if block.type == "blog-block" %}
+                    <div li-block="Blog Block">
+                                    
+                
+                                    <div li-settings="article">
 </div>
+                                    
+              
+                            </div>
+            {% endif %}
+{% endfor %}
             </div>
           </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Blog",
     "class": "blog_section",
-    "settings": [
+    "blocks": [
         {
-            "id": "text_button_text",
-            "type": "text",
-            "label": "Button Text",
-            "default": "Explore More"
-        },
-        {
-            "id": "url_link",
-            "type": "url",
-            "label": "Link"
+            "name": "Blog Block",
+            "type": "blog-block",
+            "settings": [
+                {
+                    "id": "text_button_text",
+                    "type": "text",
+                    "label": "Button Text",
+                    "default": "Explore More"
+                },
+                {
+                    "id": "url_link",
+                    "type": "url",
+                    "label": "Link"
+                }
+            ]
         }
     ],
     "presets": [
         {
             "name": "Blog",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "blog-block"
+                }
+            ]
         }
     ]
 } {% endschema %}
