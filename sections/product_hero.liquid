@@ -1,4 +1,4 @@
-<div class="product-hero_wrapper">
+<div balmaud-animation="nav-colour-swap" class="product-hero_wrapper">
           <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
 <div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
             <div id="w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b" class="product-hero_info_layout">
