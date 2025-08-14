@@ -14,7 +14,7 @@
                       <p>
 {{ block.settings.text_button_text }}
 </p>
-                      <a href="{{ block.settings.url_link }}" class="button_link w-inline-block"> </a>
+                      <a li-object:href="article.url" href="{{ block.settings.url_ }}" class="button_link w-inline-block"> </a>
                     </div>
                   </div>
                 </div>
@@ -46,9 +46,8 @@
                     "default": "Shop Now"
                 },
                 {
-                    "id": "url_link",
-                    "type": "url",
-                    "label": "Link"
+                    "id": "url",
+                    "type": "url"
                 }
             ]
         }
