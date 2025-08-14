@@ -10,7 +10,12 @@
                   <div class="blog_item"><img src="{{ 'Mask-group.webp' | asset_url }}" loading="lazy" li-object="article.image | image_url: width: 1000" alt="" sizes="100vw" srcset="{{ 'Mask-group-p-500.webp' | asset_url }} 500w, {{ 'Mask-group-p-800.webp' | asset_url }} 800w, {{ 'Mask-group-p-1080.webp' | asset_url }} 1080w, {{ 'Mask-group.webp' | asset_url }} 1402w" class="blog_item_image">
                     <h2 li-object="article.title" class="blog_item_heading text-size-large text-style-allcaps">{{ article.title }}</h2>
                     <p class="blog_item_paragraph">At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br></p>
-                    <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="base" href="{{ block.settings.url_link }}" class="button w-button"> {{ block.settings.text_button_text }} </a>
+                    <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
+                      <p>
+{{ block.settings.text_button_text }}
+</p>
+                      <a href="{{ block.settings.url_link }}" class="button_link w-inline-block"> </a>
+                    </div>
                   </div>
                 </div>
                                     
@@ -38,7 +43,7 @@
                     "id": "text_button_text",
                     "type": "text",
                     "label": "Button Text",
-                    "default": "Explore More"
+                    "default": "Shop Now"
                 },
                 {
                     "id": "url_link",

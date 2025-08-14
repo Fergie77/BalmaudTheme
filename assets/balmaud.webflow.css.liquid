@@ -1424,12 +1424,22 @@ figcaption {
   font-size: .75rem;
   font-weight: 600;
   transition: background-color .2s;
+  display: inline-block;
   position: relative;
 }
 
 .button:where(.w-variant-d7c74874-d81d-8c57-eccd-cec55a1b1e41) {
   border-color: var(--base-color-neutral--black);
   color: var(--text-color--text-primary);
+}
+
+.button:where(.w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360) {
+  position: static;
+}
+
+.button:where(.w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31) {
+  color: var(--text-color--text-primary);
+  border-color: #000;
 }
 
 .button:hover {
@@ -1440,6 +1450,11 @@ figcaption {
 .button:hover:where(.w-variant-d7c74874-d81d-8c57-eccd-cec55a1b1e41) {
   background-color: var(--base-color-neutral--black);
   color: var(--text-color--text-alternate);
+}
+
+.button:hover:where(.w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31) {
+  color: var(--text-color--text-alternate);
+  background-color: #000;
 }
 
 .button.is-text {
@@ -4350,6 +4365,11 @@ figcaption {
   width: 100%;
 }
 
+.button_link {
+  position: absolute;
+  inset: 0%;
+}
+
 @media screen and (max-width: 991px) {
   .padding-xlarge {
     padding: 3rem;
@@ -6564,11 +6584,6 @@ figcaption {
 
 #w-node-_10017149-f69b-1933-7c7c-84848814b080-8814b060 {
   grid-area: 10 / 6 / 11 / 8;
-}
-
-#w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27 {
-  grid-area: 4 / 2 / 5 / 4;
-  justify-self: start;
 }
 
 #w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b {

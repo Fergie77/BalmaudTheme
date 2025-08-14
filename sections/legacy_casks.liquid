@@ -13,7 +13,12 @@
               <p>
 {{ section.settings.text_paragraph }}
 </p>
-              <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="base" href="{{ section.settings.url_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
+              <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
+                <p>
+{{ section.settings.text_button_text }}
+</p>
+                <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"> </a>
+              </div>
             </div>
           </div>{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'hero_background-content', balmaud-animation: 'content-fade-in', sizes: '100vw', loading: 'lazy' }}
@@ -41,7 +46,7 @@
             "id": "text_button_text",
             "type": "text",
             "label": "Button Text",
-            "default": "Explore More"
+            "default": "Shop Now"
         },
         {
             "id": "url_link",

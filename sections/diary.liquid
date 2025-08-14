@@ -26,7 +26,12 @@
               </div>
             </div>
             <div id="w-node-_10017149-f69b-1933-7c7c-84848814b080-8814b060" class="margin-vertical margin-xlarge">
-              <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="dark" href="{{ section.settings.url_link }}" class="button w-variant-d7c74874-d81d-8c57-eccd-cec55a1b1e41 w-button"> {{ section.settings.text_button_text }} </a>
+              <div data-wf--button-2--variant="dark" class="button w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31">
+                <p>
+{{ section.settings.text_button_text }}
+</p>
+                <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"> </a>
+              </div>
             </div>
           </div>
         </div> {% schema %} {
@@ -38,7 +43,7 @@
             "id": "text_button_text",
             "type": "text",
             "label": "Button Text",
-            "default": "Read More"
+            "default": "Shop Now"
         },
         {
             "id": "url_link",
