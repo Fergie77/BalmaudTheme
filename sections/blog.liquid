@@ -15,7 +15,9 @@
 {{ block.settings.text_button_text }}
 </p>
                       <a href="{{ block.settings.url_link }}" class="button_link w-inline-block"> </a>
-                      <!--<a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>-->
+                      {% if article.url %}    <a li-if="article.url" li-object:href="article.url" href="article.url" class="button_link w-inline-block">
+        </a>
+{% endif %}
                     </div>
                   </div>
                 </div>
