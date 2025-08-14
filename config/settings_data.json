@@ -14,7 +14,7 @@
         "type": "nav",
         "settings": {
           "url_shop_link": "",
-          "checkbox_solid_nav": false
+          "checkbox_solid_nav": true
         }
       },
       "footer": {
