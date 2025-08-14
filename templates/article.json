@@ -1,16 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "cask_hero": {
-            "type": "cask_hero"
-        },
-        "casks_intro": {
-            "type": "casks_intro"
-        }
+  "sections": {
+    "cask_hero": {
+      "type": "cask_hero",
+      "settings": {}
     },
-    "layout": "article",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "cask_hero",
-        "casks_intro"
-    ]
+    "casks_intro": {
+      "type": "casks_intro",
+      "settings": {}
+    }
+  },
+  "layout": "article",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "cask_hero",
+    "casks_intro"
+  ]
 }

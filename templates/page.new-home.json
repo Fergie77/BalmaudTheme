@@ -15,7 +15,8 @@
         "text_heading": "Nothing Ordinary",
         "text_paragraph": "THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE",
         "text_button_text": "Shop now",
-        "url_link": ""
+        "url_link": "",
+        "checkbox_show_bottle": true
       }
     },
     "legacy": {
@@ -31,10 +32,29 @@
     },
     "blog": {
       "type": "blog",
-      "settings": {
-        "text_button_text": "Explore More",
-        "url_link": ""
-      }
+      "blocks": {
+        "blog_block_67D97F": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        },
+        "blog_block_iWXmng": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "blog_block_67D97F",
+        "blog_block_iWXmng"
+      ],
+      "settings": {}
     },
     "manifesto": {
       "type": "manifesto",
