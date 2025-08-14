@@ -1,7 +1,7 @@
 <div class="blog_wrapper">
           <div class="padding-global">
             <div class="blog_layout">
-              <div class="blog_item"><img src="{{ article.image | image_url: width: 1000 }}" loading="lazy" li-object:src="article.image | image_url: width: 1000" alt="" class="blog_item_image">
+              <div class="blog_item"><img src="{{ article.image | image_url: width: 1000, height:1000}}" loading="lazy" li-object:src="article.image | image_url: width: 1000, height:1000" alt="" class="blog_item_image">
                 <h2 li-object="article.title" class="blog_item_heading text-size-large text-style-allcaps">{{ article.title }}</h2>
                 <p class="blog_item_paragraph">At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br></p>
                 <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
