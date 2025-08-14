@@ -33,6 +33,14 @@
     "blog": {
       "type": "blog",
       "blocks": {
+        "blog_block_iWXmng": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "news/the-distillery",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        },
         "blog_block_67D97F": {
           "type": "blog-block",
           "settings": {
@@ -40,19 +48,11 @@
             "text_button_text": "Explore More",
             "url_link": ""
           }
-        },
-        "blog_block_iWXmng": {
-          "type": "blog-block",
-          "settings": {
-            "article_article": "",
-            "text_button_text": "Explore More",
-            "url_link": ""
-          }
         }
       },
       "block_order": [
-        "blog_block_67D97F",
-        "blog_block_iWXmng"
+        "blog_block_iWXmng",
+        "blog_block_67D97F"
       ],
       "settings": {}
     },
