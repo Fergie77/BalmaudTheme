@@ -1146,7 +1146,8 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
               <div class="nav_button w-nav-button">
                 <div data-is-ix2-target="1" class="nav_button_icon w-variant-5bc79521-0627-45d0-3288-096227e51632" data-w-id="e34d1f0f-346c-3e32-a53c-9999f13df676" data-animation-type="lottie" data-src="{{ 'BMD_HAMBURGER.json' | asset_url }}" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="1.04" data-ix2-initial-state="0"></div>
               </div>
-              <a href="{{ section.settings.url_shop_link }}" class="nav_link hide-tablet"> Shop </a>
+              <div class="hide w-embed">{% assign prod = all_products['highland-gin'] %}</div>
+              <a li-object:href="prod.url" href="{{ prod.url }}" class="nav_link hide-tablet">Shop</a>
               <div class="w-embed">
                 <style>
 .burger-line path
