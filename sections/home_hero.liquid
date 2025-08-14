@@ -8,7 +8,12 @@
                 <p class="hero_info_paragraph text-color-white">
 {{ section.settings.text_paragraph }}
 </p>
-                <a id="w-node-f0330c79-592f-64c7-8463-c4f62e577b27-2e577b27" data-wf--button--variant="base" href="{{ section.settings.url_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
+                <div data-wf--button-2--variant="base" class="button">
+                  <p>
+{{ section.settings.text_button_text }}
+</p>
+                  <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"> </a>
+                </div>
               </div>
             </div>
             <div id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce78-b972f49a" class="hero_detail-text_wrapper">
@@ -40,7 +45,7 @@
             "id": "text_button_text",
             "type": "text",
             "label": "Button Text",
-            "default": "Shop now"
+            "default": "Shop Now"
         },
         {
             "id": "url_link",
