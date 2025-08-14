@@ -48,11 +48,47 @@
             "text_button_text": "Explore More",
             "url_link": ""
           }
+        },
+        "blog_block_M7ieid": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        },
+        "blog_block_ECQiCy": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        },
+        "blog_block_94PqjG": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
+        },
+        "blog_block_BW9rgP": {
+          "type": "blog-block",
+          "settings": {
+            "article_article": "",
+            "text_button_text": "Explore More",
+            "url_link": ""
+          }
         }
       },
       "block_order": [
         "blog_block_67D97F",
-        "blog_block_iWXmng"
+        "blog_block_iWXmng",
+        "blog_block_M7ieid",
+        "blog_block_ECQiCy",
+        "blog_block_94PqjG",
+        "blog_block_BW9rgP"
       ],
       "settings": {}
     },
