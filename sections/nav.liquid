@@ -593,7 +593,9 @@ padding: 40px;
               </svg>
             </div>
           </div>
-        </div> {% schema %} {
+        </div>
+        {% if section.settings.checkbox_solid_nav == true %}
+<div class="nav-mode-checkbox"></div>{% endif %} {% schema %} {
     "tag": "div",
     "name": "Nav",
     "class": "nav_component w-variant-5bc79521-0627-45d0-3288-096227e51632 w-nav",
@@ -602,6 +604,12 @@ padding: 40px;
             "id": "url_shop_link",
             "type": "url",
             "label": "Shop Link"
+        },
+        {
+            "id": "checkbox_solid_nav",
+            "type": "checkbox",
+            "label": "Solid Nav",
+            "default": true
         }
     ],
     "presets": [
