@@ -17,9 +17,7 @@
 {{ section.settings.text_button_text }}
 </p>
                 <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"> </a>
-                {% if article.url %}    <a li-if="article.url" li-object:href="article.url" href="article.url" class="button_link w-inline-block">
-        </a>
-{% endif %}
+                <a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>
               </div>
             </div>
             <div id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb85b-b972f49a" class="manifesto_image_wrapper">{% if section.settings.image_image %}
