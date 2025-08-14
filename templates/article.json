@@ -1,0 +1,16 @@
+{
+    "sections": {
+        "cask_hero": {
+            "type": "cask_hero"
+        },
+        "casks_intro": {
+            "type": "casks_intro"
+        }
+    },
+    "layout": "article",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "cask_hero",
+        "casks_intro"
+    ]
+}
