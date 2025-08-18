@@ -44,6 +44,21 @@ opacity: 0;
   <script defer="" src="{{ 'alpinejs3.js' | asset_url }}"></script>
   <script defer="" auto="" min="" src="https://cdn.jsdelivr.net/gh/liquify-pro/core@latest/script.js"></script>
   <link href="{{ canonical_url }}" rel="canonical">
+  <style>
+    /* Enable native cross-document transitions */
+    @view-transition { navigation: auto; }
+    /* Only animate your main wrapper */
+    #main-wrapper { view-transition-name: main; }
+    header, footer { view-transition-name: none; }
+    /* Simple crossfade for the main area */
+    ::view-transition-old(main) { animation: fade .35s ease both; }
+    ::view-transition-new(main) { animation: fade .35s ease reverse; }
+    @keyframes fade { from { opacity:1 } to { opacity:0 } }
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+    }
+  </style>
   <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="">
