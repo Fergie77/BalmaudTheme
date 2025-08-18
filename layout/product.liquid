@@ -286,7 +286,7 @@ margin: 0rem !important;
     a,
     ul,
     li,
-    .turned-detail-text_wrapper
+    .turned-detail-text_wrapper, .button
   ) {
     text-box: trim-both cap alphabetic;
   }
@@ -645,6 +645,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                   <path d="M47.6363 28.0902H38.3653C39.3162 27.0205 39.6332 25.9111 39.3558 24.6829C38.6823 22.1869 37.6522 20.0078 37.6522 20.0078H29.0548L28.3812 22.5435C27.9454 23.9698 27.6285 25.0395 27.6285 25.9508C27.6285 26.7035 27.8662 27.3771 28.3812 28.0902H21.4082C22.993 26.4262 23.9438 25.1187 24.8947 22.5435L30.798 5.22977C31.3923 3.64499 31.63 2.6545 31.63 1.74326C31.63 1.14896 31.5508 0.633911 31.3527 0L35.7505 0L42.8027 19.3343C44.0705 22.385 45.2987 26.3073 47.6363 28.0902ZM29.966 17.3533L36.7013 17.393L33.2544 8.39933L29.966 17.3533Z" fill="currentColor"></path>
                   <path d="M15.0554 13.3906C15.0554 13.3906 20.8398 14.6188 20.8398 20.4428C20.8398 27.0989 13.3121 28.0894 8.16161 28.0894H0C1.4263 26.4254 1.46592 23.969 1.46592 23.6124V4.95161C1.46592 4.59504 1.4263 2.13863 0 0.474609H11.4104C11.4104 0.474609 18.7796 0.514231 18.7796 6.53639C18.7796 11.2907 16.3232 12.5982 15.0554 13.3906ZM6.77493 3.12912V12.9151C6.77493 12.9151 13.7876 13.8264 13.7876 6.81373C13.7876 2.6933 7.3296 3.12912 6.77493 3.12912ZM15.4516 20.6013C15.412 14.5791 10.6576 14.5395 6.77493 14.5395V25.1575C6.77493 25.1575 6.77493 25.1575 6.81455 25.1575C7.36922 25.1575 8.24085 25.2368 9.19172 25.2368C11.9255 25.2368 15.4516 24.6821 15.4516 20.6013Z" fill="currentColor"></path>
                 </svg></a>
+              <div class="hide w-embed">{% assign prod = all_products['highland-gin'] %}</div>
               <div class="nav_menu">
                 {% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links">
                                     
@@ -654,6 +655,8 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                 
                         </div>
 {% endfor %}
+                <a li-object="prod.title" li-object:href="all_products['highland-gin'].url" href="{{ all_products['highland-gin'].url }}" class="nav_link hide-desktop">{{ prod.title }}</a>
+                <div class="hide-desktop"></div>
               </div>
               <div class="nav_menu_background">
                 <div class="nav_menu_detail-text">
@@ -1146,7 +1149,6 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
               <div class="nav_button w-nav-button">
                 <div data-is-ix2-target="1" class="nav_button_icon w-variant-5bc79521-0627-45d0-3288-096227e51632" data-w-id="e34d1f0f-346c-3e32-a53c-9999f13df676" data-animation-type="lottie" data-src="{{ 'BMD_HAMBURGER.json' | asset_url }}" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="1.04" data-ix2-initial-state="0"></div>
               </div>
-              <div class="hide w-embed">{% assign prod = all_products['highland-gin'] %}</div>
               <a li-object:href="prod.url" href="{{ prod.url }}" class="nav_link hide-tablet">Shop</a>
               <div class="w-embed">
                 <style>
