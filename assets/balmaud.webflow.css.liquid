@@ -568,10 +568,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 ul, ol {
   margin-top: 0;
   margin-bottom: 0;
@@ -4370,6 +4366,10 @@ figcaption {
   inset: 0%;
 }
 
+.hide-desktop {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   .padding-xlarge {
     padding: 3rem;
@@ -4959,6 +4959,10 @@ figcaption {
   .nav_button_icon:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
     fill: #000;
   }
+
+  .hide-desktop {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -5509,6 +5513,10 @@ figcaption {
 
   .diary_items_layout {
     flex-flow: row;
+  }
+
+  .mini-cart_component {
+    width: 100%;
   }
 
   .heading-style-h3-2, .heading-style-h3-3 {
