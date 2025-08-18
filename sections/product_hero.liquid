@@ -79,7 +79,7 @@
             </div>
             <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
               {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
-                                    <img src="{{ image.src | image_url: width: 1500 }}" loading="lazy" li-object:src="image.src | image_url: width: 1500" li-object:alt="image.alt" alt="{{ image.alt }}" class="product-hero_slider_image">
+                                    <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
                         </div>
 {% endfor %}
             </div>
