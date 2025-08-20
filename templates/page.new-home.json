@@ -41,17 +41,17 @@
             "text_heading": "The Distillery",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
             "text_button_text": "Shop Now",
-            "url_link": ""
+            "url_link": "shopify://pages/about"
           }
         },
         "about_block_CbidFa": {
           "type": "about-block",
           "settings": {
             "image_image": "shopify://shop_images/April_balmaud_shoot-5_1.webp",
-            "text_heading": "The Distillery",
+            "text_heading": "Sustainability",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
             "text_button_text": "Shop Now",
-            "url_link": ""
+            "url_link": "shopify://pages/about"
           }
         }
       },
