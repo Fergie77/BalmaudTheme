@@ -20,7 +20,7 @@
               </div>
             </div>
           </div>{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'casks_sign-up_image', sizes: '100vw', loading: 'lazy' }}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: class: 'casks_sign-up_image', sizes: '100vw', loading: 'lazy' }}
 {% else %}
 <img class="casks_sign-up_image" src="{{ 'Still-2025-03-26-140012_1.33.1-2.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'Still-2025-03-26-140012_1.33.1-2-p-500.webp' | asset_url }} 500w, {{ 'Still-2025-03-26-140012_1.33.1-2-p-800.webp' | asset_url }} 800w, {{ 'Still-2025-03-26-140012_1.33.1-2-p-1080.webp' | asset_url }} 1080w, {{ 'Still-2025-03-26-140012_1.33.1-2-p-1600.webp' | asset_url }} 1600w, {{ 'Still-2025-03-26-140012_1.33.1-2-p-2000.webp' | asset_url }} 2000w, {{ 'Still-2025-03-26-140012_1.33.1-2.webp' | asset_url }} 2115w">
 {% endif %}

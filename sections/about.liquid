@@ -5,7 +5,7 @@
     {% if block.type == "about-block" %}
                     <div li-block="About Block" class="blog_item">
                                     {% if block.settings.image_image %}
-{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'blog_item_image' }}
+{{ block.settings.image_image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'blog_item_image' }}
 {% else %}
 <img src="" alt="" loading="lazy" class="blog_item_image">
 {% endif %}
