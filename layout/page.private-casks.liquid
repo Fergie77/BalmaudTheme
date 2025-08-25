@@ -34,6 +34,9 @@
 [balmaud-animation="split-fade-in"], [balmaud-animation="fade-in"]{
 opacity: 0;
 }
+[balmaud-animation="content-fade-in"]{
+filter: brightness(0);
+}
 [data-preload]{
 opacity: 0;
 }
@@ -1029,7 +1032,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                         <div class="mini-cart_line-item no-scrollbar">
                           <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
                             <template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="images/PRODUCT_PLACEHOLDER.webp" alt="" sizes="(max-width: 479px) 100vw, 648.9931030273438px" loading="lazy" srcset="{{ 'PRODUCT_PLACEHOLDER-p-500.webp' | asset_url }} 500w, {{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }} 649w" x-bind:src="product.image">
+    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="images/PRODUCT_PLACEHOLDER.webp" alt="" sizes="100vw" loading="lazy" srcset="{{ 'PRODUCT_PLACEHOLDER-p-500.webp' | asset_url }} 500w, {{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }} 649w" x-bind:src="product.image">
                               <div class="mini-cart_line-item_product-info">
                                 <div class="mini-cart_line-item_title_wrapper">
                                   <div li-js-object="product.title" class="text-size-regular" x-text="product.title">Highland Dry Gin</div>
