@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-wf-page="68ad8b361fa0b86db69205e1" data-wf-site="68ad8b361fa0b86db69205ff" lang="{{ request.locale.iso_code }}">
+<html data-wf-page="68ad8b361fa0b86db69205e4" data-wf-site="68ad8b361fa0b86db69205ff" lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
   <title>{{ page_title }}</title>
@@ -50,36 +50,8 @@
 </style>
   <meta name="theme-color" content="#000" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#fff" media="(prefers-color-scheme: dark)">
-  <script type="application/ld+json">
-         {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{ article.title }} ",
-      "image": "{{ article.image | img_url: 'medium' }}",
-      "genre": "{{ blog.title }}",
-       "mainEntityOfPage": {
-          "@type": "WebPage",
-           "@id": "{{ article.url }}"
-      },
-      "publisher": {
-       "@type": "Organization",
-        "name": "{{ shop.address.company }}",
-        "email": "{{ shop.email }}",
-        "address": "{{ shop.address }}"
-      },
-      "url": "{{ article.url }}",
-      "datePublished": "{{ article.published_at }}",
-      "dateCreated": "{{ article.created_at }}",
-      "dateModified": "{{ article.updated_at }}",
-      "description": "{{ page_description }}",
-        "author": {
-         "@type": "Person",
-         "name": "{{ shop.address.company }}"
-       }
-      }
-</script>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
-<body li-page="article">
+<body>
   <div class="page-wrapper">
     {% render 'global_styles' %}
     {% section 'header' %}
