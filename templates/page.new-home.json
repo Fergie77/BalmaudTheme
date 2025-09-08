@@ -15,8 +15,7 @@
         "text_heading": "Nothing Ordinary",
         "text_paragraph": "THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE",
         "text_button_text": "Shop Now",
-        "url_link": "shopify://products/highland-gin",
-        "checkbox_show_bottle": true
+        "url_link": "shopify://products/highland-gin"
       }
     },
     "legacy": {
@@ -90,7 +89,7 @@
       "type": "diary",
       "settings": {
         "text_button_text": "Shop Now",
-        "url_link": ""
+        "url_link": "shopify://products/highland-gin"
       }
     }
   },
