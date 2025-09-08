@@ -39,7 +39,7 @@
             "image_image": "shopify://shop_images/Mask_group.webp",
             "text_heading": "The Distillery",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-            "text_button_text": "Shop Now",
+            "text_button_text": "Find out more",
             "url_link": "shopify://pages/about"
           }
         },
@@ -49,7 +49,7 @@
             "image_image": "shopify://shop_images/Mask_group-1.webp",
             "text_heading": "Sustainability",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-            "text_button_text": "Shop Now",
+            "text_button_text": "Find out more",
             "url_link": "shopify://pages/about"
           }
         }
@@ -72,8 +72,8 @@
       "settings": {
         "text_heading": "Own your Legacy",
         "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-        "text_button_text": "Shop Now",
-        "url_link": "shopify://products/highland-gin"
+        "text_button_text": "Find out more",
+        "url_link": "shopify://pages/private-casks"
       }
     },
     "manifesto_2": {
@@ -82,7 +82,7 @@
         "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
         "text_heading": "Find your Unordinary way to drink",
         "text_button_text": "Shop Now",
-        "url_link": ""
+        "url_link": "shopify://products/highland-gin"
       }
     },
     "diary": {
