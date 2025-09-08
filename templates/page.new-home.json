@@ -37,7 +37,7 @@
           "type": "about-block",
           "name": "About Block",
           "settings": {
-            "image_image": "shopify://shop_images/PRODUCT_PLACEHOLDER.webp",
+            "image_image": "shopify://shop_images/Mask_group.webp",
             "text_heading": "The Distillery",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
             "text_button_text": "Shop Now",
@@ -47,7 +47,7 @@
         "about_block_CbidFa": {
           "type": "about-block",
           "settings": {
-            "image_image": "shopify://shop_images/April_balmaud_shoot-5_1.webp",
+            "image_image": "shopify://shop_images/Mask_group-1.webp",
             "text_heading": "Sustainability",
             "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
             "text_button_text": "Shop Now",
