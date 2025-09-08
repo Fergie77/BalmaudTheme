@@ -48,9 +48,18 @@
             <div class="dividing-line"></div>
             <p id="w-node-d6646beb-e906-781e-137d-1683b06e37d5-b06e379e" class="footer_form_paragraph">JOIN OUR MAILING LIST TO BE THE FIRST IN THE KNOW ABOUT EXCLUSIVE RELEASES, FARM PARTIES, AND SHOWS.</p>
             <div id="w-node-d6646beb-e906-781e-137d-1683b06e37d9-b06e379e">
-              {% form 'contact' %}
+              <div class="w-form">
+                {% form 'contact', class: 'footer_form_layout' %}
 <div class="form_input_wrapper"><label for="Name" class="form_label">Name:</label><input class="form_input w-input" maxlength="256" name="Name" data-name="Name" placeholder="" type="text" id="Name" required=""></div>
-                  <div class="form_input_wrapper"><label for="Email" class="form_label">Email :</label><input class="form_input w-input" maxlength="256" name="Email" data-name="Email" placeholder="" type="email" id="Email" required=""></div><input type="submit" data-wait="Please wait..." class="button is-dark-outline w-button" value="Submit">{% endform %}
+                  <div class="form_input_wrapper"><label for="Email" class="form_label">Email :</label><input class="form_input w-input" maxlength="256" name="Email" data-name="Email" placeholder="" type="email" id="Email" required=""></div><input type="submit" data-wait="Please wait..." class="button is-dark-outline w-button" value="Submit">
+                {% endform %}
+                <div class="footer_form_success w-form-done">
+                  <div>Thank you! We'll be in touch soon</div>
+                </div>
+                <div class="w-form-fail">
+                  <div>Something went wrong while submitting the form.</div>
+                </div>
+              </div>
             </div>
           </div>
           <p id="w-node-d6646beb-e906-781e-137d-1683b06e37eb-b06e379e" class="footer_terms-info">Balmaud Distillery Co. Ltd. Turriff AB53 5PT Copyright 2025 All Rights Reserved</p>
