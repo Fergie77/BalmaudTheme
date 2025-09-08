@@ -26,7 +26,11 @@
               <p class="hero_detail-text">Single estate distillery</p>
               <p class="hero_detail-text">Single estate distillery</p>
             </div>
-          </div><img class="hero_background-content" src="{{ 'image-30.webp' | asset_url }}" balmaud-animation="content-fade-in" alt="" sizes="100vw" loading="lazy" srcset="{{ 'image-30-p-500.webp' | asset_url }} 500w, {{ 'image-30-p-800.webp' | asset_url }} 800w, {{ 'image-30-p-1080.webp' | asset_url }} 1080w, {{ 'image-30-p-1600.webp' | asset_url }} 1600w, {{ 'image-30-p-2000.webp' | asset_url }} 2000w, {{ 'image-30-p-2600.webp' | asset_url }} 2600w, {{ 'image-30.webp' | asset_url }} 2880w">
+          </div>{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content' }}
+{% else %}
+<img src="{{ 'image-30.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content">
+{% endif %}
         </div> {% schema %} {
     "tag": "section",
     "name": "Home Hero",
@@ -54,6 +58,11 @@
             "id": "url_link",
             "type": "url",
             "label": "Link"
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
         }
     ],
     "presets": [
