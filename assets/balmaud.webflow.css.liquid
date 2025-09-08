@@ -90,7 +90,7 @@
   --base-color-neutral--neutral-lighter: #ccc;
   --h1: clamp(3.375 * 1rem, ((3.375 - ((8.75 - 3.375) / (90 - 20) * 20)) * 1rem + ((8.75 - 3.375) / (90 - 20)) * 100vw), 8.75 * 1rem);
   --h3: clamp(3 * 1rem, ((3 - ((6.25 - 3) / (90 - 20) * 20)) * 1rem + ((6.25 - 3) / (90 - 20)) * 100vw), 6.25 * 1rem);
-  --h4: clamp(2.25 * 1rem, ((2.25 - ((4.875 - 2.25) / (90 - 20) * 20)) * 1rem + ((4.875 - 2.25) / (90 - 20)) * 100vw), 4.875 * 1rem);
+  --h4: clamp(2.6 * 1rem, ((2.6 - ((4.875 - 2.6) / (90 - 20) * 20)) * 1rem + ((4.875 - 2.6) / (90 - 20)) * 100vw), 4.875 * 1rem);
   --h5: clamp(2.5625 * 1rem, ((2.5625 - ((3.4375 - 2.5625) / (90 - 20) * 20)) * 1rem + ((3.4375 - 2.5625) / (90 - 20)) * 100vw), 3.4375 * 1rem);
   --h6: clamp(2.5 * 1rem, ((2.5 - ((3.125 - 2.5) / (90 - 20) * 20)) * 1rem + ((3.125 - 2.5) / (90 - 20)) * 100vw), 3.125 * 1rem);
   --base-color-brand--blue-light: #d9e5ff;
@@ -3337,7 +3337,6 @@ figcaption {
 }
 
 .manifesto_vertical-text_item {
-  color: var(--brand-yellow);
   line-height: .9;
 }
 
@@ -4390,6 +4389,59 @@ figcaption {
 
 .manifesto_image_mask.is-right {
   left: auto;
+}
+
+.product-cta_section {
+  margin-top: 10rem;
+  margin-bottom: 8rem;
+}
+
+.product-cta_wrapper {
+  position: relative;
+}
+
+.product-cta_layout {
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  flex-flow: column;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  place-items: flex-start stretch;
+  max-width: 37rem;
+  min-height: 37.5rem;
+  padding-left: 9rem;
+  padding-right: 3rem;
+  display: flex;
+}
+
+.product-cta_background-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.product-cta_heading {
+  z-index: 2;
+  position: relative;
+}
+
+.product-cta_heading.heading-style-h4 {
+  font-size: calc(var(--h4)  - .5rem);
+}
+
+.product-cta_heading.heading-style-h4.text-color-white {
+  max-width: 26rem;
+  transform: translate(-5rem);
+}
+
+.product-cta_paragraph {
+  z-index: 2;
+  position: relative;
 }
 
 @media screen and (max-width: 991px) {
@@ -6025,39 +6077,54 @@ figcaption {
     grid-row-gap: 1rem;
   }
 
+  .blog_item {
+    aspect-ratio: 2 / 3;
+  }
+
+  .manifesto_vertical-text_item {
+    font-size: .5rem;
+  }
+
+  .manifesto_background-detail-image {
+    width: 75%;
+  }
+
   .product-hero_wrapper {
-    margin-top: calc(var(--announcement-bar-height)  + 2.875rem);
+    margin-top: calc(var(--announcement-bar-height)  + 3.575rem);
   }
 
   .product-hero_info_layout {
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
+    margin-top: .5rem;
   }
 
   .product-header_buy-wrappper {
     justify-content: space-between;
   }
 
-  .product-header_form-block {
-    padding-right: var(--padding--global);
-    padding-left: var(--padding--global);
-    width: 100%;
-  }
-
-  .button-2 {
+  .product-header_form-block, .button-2 {
     width: 100%;
   }
 
   .product-header_default-state.is-floating {
+    padding-right: var(--padding--global);
+    padding-left: var(--padding--global);
     flex-flow: column;
   }
 
   .product-info-1_wrapper {
-    padding-top: 3.5rem;
+    padding-top: 0;
+    overflow: clip;
   }
 
   .product-info-1_layout {
     width: 100%;
+  }
+
+  .product-info-1_heading.heading-style-h3 {
+    margin-left: 0;
+    transform: translate(-1.7rem, -.2rem);
   }
 
   .product-info-2_wrapper {
@@ -6089,6 +6156,11 @@ figcaption {
     display: flex;
   }
 
+  .product-hero_slider_slide {
+    aspect-ratio: 1;
+    height: auto;
+  }
+
   .mini-cart_component {
     width: 100%;
   }
@@ -6108,6 +6180,10 @@ figcaption {
 
   .nav_mini-cart-close-2 {
     display: none;
+  }
+
+  .nav_menu_detail-text {
+    transform: translate(0, 2rem);
   }
 
   .nav_menu_background_detail-image {
@@ -7257,6 +7333,15 @@ figcaption {
 
   #w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce78-b972f49a {
     align-self: end;
+  }
+
+  #w-node-a6aa2052-33f2-bba1-a56c-d0445962e633-b972f49a {
+    grid-area: 1 / 1 / 2 / 13;
+    align-self: end;
+  }
+
+  #w-node-_2b5d3674-b16c-181c-5b5a-bc8fb015018a-b972f49a, #w-node-_180143e4-68e7-1142-bd61-593d115015c7-b972f49a {
+    grid-column: span 2 / span 2;
   }
 
   #w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb859-b972f49a {
