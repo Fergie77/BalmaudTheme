@@ -1,0 +1,28 @@
+<script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" id="w-node-_504c05cf-7cdc-9094-c8df-bdbc4fff3098-4fff3097" class="product-item_component is-cart-extra" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+                                <div class="product-item_info-flex">
+                                  <div class="product-item_image-link is-cart-extra">
+                                    <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | image_url: width: 450" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | image_url: width: 450 }}" loading="lazy" class="product-item_image is-cart-extra"></a>
+                                  </div>
+                                  <a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link w-inline-block">
+                                    <div class="product-item_left is-cart-extra">
+                                      <div class="product-item_price_wrapper is-cart-extra">
+                                        <div class="product-item_name_wrapper">
+                                          <div class="product-item_name_heading"><span li-object="product.title">{{ product.title }}</span></div>
+                                          <div class="product-item_name_heading text-style-1line is-hidden"><span>View Product →</span></div>
+                                        </div>
+                                        <div class="product-item_price">
+                                          {% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price">
+    
+                                            <div li-object="product.compare_at_price | money" class="text-style-strikethrough text-style-muted text-size-small">{{ product.compare_at_price | money }}</div>
+                                              </div>
+{% endif %}
+                                          <div li-object="product.price | money" class="text-size-small">{{ product.price | money }}</div>
+                                        </div>
+                                      </div>
+                                      <div>This is some text inside of a div block.</div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <a li-element="add-to-cart" href="#" class="button text-align-center w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">add to cart</a>
+                              </div>
