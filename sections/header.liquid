@@ -1,0 +1,130 @@
+<div class="padding-global">
+        <div class="container-large">
+          <div class="nav_container-2"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 51 19" fill="none" class="nav-menu_button">
+              <line y1="1.5" x2="51" y2="1.5" stroke="currentColor" stroke-width="2"></line>
+              <line y1="17.5" x2="51" y2="17.5" stroke="currentColor" stroke-width="2"></line>
+            </svg>
+            <a href="../index.html" class="nav_brand w-nav-brand"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 128 26" fill="none">
+                <path d="M2.16 23.5V6.7H9.24C12.36 6.7 14.64 8.548 14.64 11.788C14.64 15.028 12.36 16.876 9.24 16.876H4.56V23.5H2.16ZM4.56 14.716H8.88C11.04 14.716 12.24 13.708 12.24 11.788C12.24 9.868 11.04 8.86 8.88 8.86H4.56V14.716ZM25.962 17.02L22.794 8.908L19.626 17.02H25.962ZM28.482 23.5L26.802 19.18H18.786L17.106 23.5H14.658L21.306 6.7H24.378L30.978 23.5H28.482ZM35.9775 14.62H40.4175C42.4575 14.62 43.6575 13.3 43.6575 11.62C43.6575 9.82 42.4575 8.86 40.4175 8.86H35.9775V14.62ZM33.5775 23.5V6.7H40.7775C43.8975 6.7 46.0575 8.62 46.0575 11.26C46.0575 13.42 44.8575 15.028 43.2975 15.508C45.2175 15.508 45.8175 16.18 45.8175 17.86V23.5H43.4175V18.46C43.4175 17.14 43.0575 16.78 41.7375 16.78H35.9775V23.5H33.5775ZM59.442 17.02L56.274 8.908L53.106 17.02H59.442ZM61.962 23.5L60.282 19.18H52.266L50.586 23.5H48.138L54.786 6.7H57.858L64.458 23.5H61.962ZM67.0575 23.5V6.7H69.4575V21.34H79.2975V23.5H67.0575ZM82.11 23.5V6.7H84.51V21.34H94.35V23.5H82.11ZM97.1625 23.5V6.7H109.403V8.86H99.5625V13.78H107.963V15.94H99.5625V21.34H109.643V23.5H97.1625ZM113.059 23.5V6.7H115.459V21.34H125.299V23.5H113.059Z" fill="currentColor"></path>
+                <line x1="2" y1="1.5" x2="125" y2="1.5" stroke="currentColor" stroke-width="2"></line>
+              </svg></a>
+            <nav role="navigation" class="nav_menu w-nav-menu">
+              <div class="nav_top-layout">
+                <a href="#" class="nav_close-button w-inline-block"><svg width="100%" height="100%" viewbox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav_close-icon">
+                    <path d="M18.2375 18.2166L7.73828 7.71741" stroke="currentColor" stroke-width="1.49989" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path>
+                    <path d="M18.2375 7.71741L7.73828 18.2166" stroke="currentColor" stroke-width="1.49989" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path>
+                  </svg></a>
+              </div>
+              <div class="nav_middle-layout">
+                {% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links" class="nav_dropdown">
+                                    
+                  
+                            <div class="nav_dropdown-toggle">
+                    {% if link.links.size > 0 %}    <div li-if="link.links.size > 0" class="dropdown-icon hide w-embed">
+    <svg width=" 100%" height=" 100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z" fill="currentColor"></path>
+                      </svg>    </div>
+{% endif %}
+                    {% if link.links.size < 1 %}    <div li-if="link.links.size < 1">
+    
+                      <a li-object:href="link.url" href="{{ link.url }}" class="nav_menu_link w-inline-block">
+                        <div>
+                          <div li-object="link.title">{{ link.title }}</div>
+                        </div>
+                      </a>
+                        </div>
+{% endif %}
+                    {% if link.links.size > 0 %}    <div li-if="link.links.size > 0" class="nav_menu_link">
+    
+                      <div>
+                        <div li-object="link.title">{{ link.title }}</div>
+                      </div>
+                        </div>
+{% endif %}
+                  </div>
+                            
+                  
+                            {% if link.links.size > 0  %}    <div li-if="link.links.size > 0 " class="nav_dropdown-list">
+    
+                    <div class="padding-global">
+                      <div class="container-large">
+                        <div class="nav_dropdown-grid">
+                          {% for child_link in link.links %}    <div li-for="child_link in link.links">
+                                    
+                            
+                            <a li-object="child_link.title" li-object:href="child_link.url" href="{{ child_link.url }}" class="nav_dropdown-link">{{ child_link.title }}</a>
+                            
+                            
+                            {% if child_link.links.size > 0 %}    <div li-if="child_link.links.size > 0">
+    
+                              {% for grandchild_link in child_link.links %}    <div li-for="grandchild_link in child_link.links">
+                                    
+                                
+                            <a li-object="grandchild_link.title" li-object:href="grandchild_link.url" href="{{ grandchild_link.url }}" class="nav_dropdown-link_child">{{ grandchild_link.title }}</a>
+                            
+                              
+                        </div>
+{% endfor %}
+                                </div>
+{% endif %}
+                            
+                          
+                        </div>
+{% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                      </div>
+{% endif %}
+                            
+                  
+                            <div class="nav_menu_divider"></div>
+                            
+                
+                        </div>
+{% endfor %}
+                <div class="nav_contact-layout">
+                  <div class="nav_contact-info_layout">
+                    <h2 class="heading-style-h3">Email</h2>
+                    <a href="mailto:hello@parallelcoffee.co.uk" class="email-link">hello@parallelcoffee.co.uk</a>
+                  </div>
+                  <div class="nav_contact-info_layout">
+                    <h2 class="heading-style-h3">Socials</h2>
+                    <a href="https://www.instagram.com/parallelcoffee.gla/" target="_blank" class="footer_social-icon w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" fill="currentColor"></path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <div class="nav_right-side">
+              {% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional">
+    
+                <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_shop-icon w-inline-block">
+                  <div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                      <mask id="mask0_2941_121306" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                        <rect width="24" height="24" fill="#D9D9D9"></rect>
+                      </mask>
+                      <g mask="url(#mask0_2941_121306)">
+                        <path d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 20V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V20H4ZM6 18H18V17.2C18 17.0167 17.9542 16.85 17.8625 16.7C17.7708 16.55 17.65 16.4333 17.5 16.35C16.6 15.9 15.6917 15.5625 14.775 15.3375C13.8583 15.1125 12.9333 15 12 15C11.0667 15 10.1417 15.1125 9.225 15.3375C8.30833 15.5625 7.4 15.9 6.5 16.35C6.35 16.4333 6.22917 16.55 6.1375 16.7C6.04583 16.85 6 17.0167 6 17.2V18ZM12 10C12.55 10 13.0208 9.80417 13.4125 9.4125C13.8042 9.02083 14 8.55 14 8C14 7.45 13.8042 6.97917 13.4125 6.5875C13.0208 6.19583 12.55 6 12 6C11.45 6 10.9792 6.19583 10.5875 6.5875C10.1958 6.97917 10 7.45 10 8C10 8.55 10.1958 9.02083 10.5875 9.4125C10.9792 9.80417 11.45 10 12 10Z" fill="currentColor"></path>
+                      </g>
+                    </svg></div>
+                </a>
+                  </div>
+{% endif %}
+              {% render 'mini_cart' %}
+            </div>
+          </div>
+        </div>
+      </div> {% schema %} {
+    "tag": "div",
+    "name": "header",
+    "class": "nav_component-2 w-nav",
+    "presets": [
+        {
+            "name": "header",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
