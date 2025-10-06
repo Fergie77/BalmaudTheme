@@ -1,93 +1,251 @@
-<div balmaud-animation="nav-colour-swap" class="product-hero_wrapper">
-          <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
-<div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
-            <div balmaud-animation="fade-in" id="w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b" class="product-hero_info_layout">
-              <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">
-{{ product.title }}
-</h1>
-              <div class="w-richtext">
-                <h1 li-object="product.description">{{ product.description }}</h1>
-              </div>
-              <div class="product-header_form-block w-form">
-                {% form 'product', product, class: 'product-header_default-state' %}
-{% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
-    
-                    <template x-for="(option, optionKey) in product.options" :key="optionKey">
-    <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
-                      <div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
-    <label li-element="product-option-loop" class="product-header_radio w-radio">
-                          <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
-                          <div li-js-object="'£' + variants.find(variant => variant.options.includes(variantName))?.price / 100" class="product-header_radio_label" x-text="'£' + variants.find(variant => variant.options.includes(variantName))?.price / 100">£10</div>
-                          <div class="product-header_radio_label is-dash">-</div><span li-element="product-option-name" class="product-header_radio_label w-form-label" for="radio" x-text="variantName" :for="variantName">70cl bottle</span>
-                        </label></template></div>
-                    </div></template>
-                      </div>
-{% endif %}
-                  <div class="product-header_add-to-cart-wrapper">
-                    <template x-if="selected_or_first_available_variant.available">
-            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
-        <input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
-                      <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to Basket</a>
-                      <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
-<a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout($event, true)">Buy Now</a>
-                            </div>
-    </template>
-                    <template x-if="!selected_or_first_available_variant.available">
-            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
-        
-                      <a href="#" class="product-header_out-of-stock_text w-button">Not in Stock</a>
-                            </div>
-    </template>
-                  </div>
-                {% endform %}
-                <div class="hide w-form-done">
-                  <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="hide w-form-fail">
-                  <div>Oops! Something went wrong while submitting the form.</div>
-                </div>
-              </div>
-              <div class="product-hero_info_dropdowns_layout">
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Tasting Notes</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.tasting_notes | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.tasting_notes | metafield_tag }}</div>
-                  </div>
-                </div>
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Allergens</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.allergens | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.allergens | metafield_tag }}</div>
-                  </div>
-                </div>
-                <div class="product-hero_dropdown">
-                  <div class="product-hero_dropdown_toggle">
-                    <div>Delivery Information</div>
-                    <div class="product-hero_dropdown-toggle_icon">+</div>
-                  </div>
-                  <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.delivery_information | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.delivery_information | metafield_tag }}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
-              {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
-                                    <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
+<div class="container-large-3">
+            <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="product-page_split" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+              <div class="product-images_list">
+                {% for image in product.images %}    <div li-for="image in product.images" class="product-image_wrapper">
+                                    <img data-animation="gsap-fade-in" class="product-image" src="{{ image.src | image_url: width: 1500 }}" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
                         </div>
 {% endfor %}
+              </div>
+              <div data-animation="gsap-line-height" class="product-info_vertical-divider"></div>
+              <div class="product-info_column">
+                <div x-data="{selling_plan: '{{ product.selected_or_first_available_variant. selected_selling_plan_allocation.selling_plan.id }}', sellingplan_active: false }" class="product_top-info_layout">
+                  <div>
+                    <div class="margin-bottom margin-xsmall">
+                      <div data-animation="gsap-slide-in" class="product_top-info_title">
+                        <h1 li-object:text="product.title" class="product_title">
+{{ product.title }}
+</h1>
+                      </div>
+                    </div>
+                    <div class="margin-bottom margin-small">
+                      <div>
+                        <div>
+                          <div data-animation="gsap-slide-in" li-object="product.content" class="product_description w-richtext">{{ product.content }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-animation="gsap-slide-in" class="product_bottom-info_layout">
+                    {% if product.metafields.custom.origin %}    <div li-if="product.metafields.custom.origin" id="w-node-_5d63ecb4-169d-d80b-777e-8d17f526d422-f55cc331" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Origin°</div>
+                      <div li-object="product.metafields.custom.origin" id="w-node-_34e5cbe2-e749-6693-09a6-670fda5df6b0-f55cc331" class="product-info_metafield">{{ product.metafields.custom.origin }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.farm %}    <div li-if="product.metafields.custom.farm" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Farm°</div>
+                      <div li-object="product.metafields.custom.farm" id="w-node-_34e5cbe2-e749-6693-09a6-670fda5df6b4-f55cc331" class="product-info_metafield">{{ product.metafields.custom.farm }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.region %}    <div li-if="product.metafields.custom.region" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Region°</div>
+                      <div li-object="product.metafields.custom.region" id="w-node-de4ebd84-366d-26e0-cbae-095a4caebab8-f55cc331" class="product-info_metafield">{{ product.metafields.custom.region }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.variety %}    <div li-if="product.metafields.custom.variety" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Variety°</div>
+                      <div li-object="product.metafields.custom.variety" id="w-node-_34e5cbe2-e749-6693-09a6-670fda5df6b8-f55cc331" class="product-info_metafield">{{ product.metafields.custom.variety }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.process %}    <div li-if="product.metafields.custom.process" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Process°</div>
+                      <div li-object="product.metafields.custom.process" id="w-node-_34e5cbe2-e749-6693-09a6-670fda5df6bc-f55cc331" class="product-info_metafield">{{ product.metafields.custom.process }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.altitude %}    <div li-if="product.metafields.custom.altitude" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Altitude°</div>
+                      <div li-object="product.metafields.custom.altitude" id="w-node-_2b50f0f8-d7f1-acc5-1b1a-9fbec250a254-f55cc331" class="product-info_metafield">{{ product.metafields.custom.altitude }}</div>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.notes %}    <div li-if="product.metafields.custom.notes" class="product-item_metafield-layout">
+    
+                      <div class="product-info_meta-heading">Notes°</div>
+                      <div id="w-node-_34e5cbe2-e749-6693-09a6-670fda5df6c0-f55cc331" class="product-item_notes-flex">
+                        {% for item in product.metafields.custom.notes.value %}    <div li-for="item in product.metafields.custom.notes.value">
+                                    
+                          
+                            <div li-object="item" class="product-info_metafield">{{ item }}</div>
+                            
+                        
+                        </div>
+{% endfor %}
+                      </div>
+                        </div>
+{% endif %}
+                  </div>
+                  <div data-animation="gsap-line-width" class="horizontal-divider"></div>
+                  <div data-animation="gsap-slide-in" class="pricing_layout"></div>
+                  <div data-animation="gsap-slide-in" class="product-header_add-to-cart w-form">
+                    {% form 'product', product, class: 'product-header_default-state' %}
+{% if product.selling_plan_groups.size > 0 %}    <div li-if="product.selling_plan_groups.size > 0">
+    
+                        <div li-for:inside="variant in product.variants">
+        {% for variant in product.variants %}                            
+                          
+                            <template x-if="{{ variant.id }} === product.selected_or_first_available_variant.id">
+            <div li-js-if="{{ variant.id }} === product.selected_or_first_available_variant.id" class="product-header_subscription">
+        <label class="product-header_subscription_radio-lable w-radio"><input x-on:click="sellingplan_active = false; selling_plan = ''" class="w-form-formradioinput radio_button w-radio-input" name="selling_plan_active" data-name="selling_plan_active" type="radio" id="radio-5" checked="" value=""><span class="radio_label w-form-label" for="radio-5">
+{{ section.settings.text_without_subscription }}
+</span></label><label class="product-header_subscription_radio-lable is-on w-radio"><input type="radio" name="selling_plan_active" id="radio-4" data-name="selling_plan_active" x-on:click="sellingplan_active = true; selling_plan = '{{ variant.selling_plan_allocations.first.selling_plan.id }}'" class="w-form-formradioinput radio_button w-radio-input" value="Radio 4"><span class="radio_label w-form-label" for="radio-4">
+{{ section.settings.text_with_subscription }}
+</span></label>
+                            <div id="w-node-c97accd2-b812-c933-dc4c-de71f71bddb8-f55cc331" class="product-header_subscription_options">
+                              <div x-show="sellingplan_active" class="w-layout-vflex flex-block">
+                                <div id="w-node-abe715a8-c224-68ab-6ab0-496d9568dd04-f55cc331" class="horizontal-divider"></div>{% for plan in variant.selling_plan_allocations %}    <label li-for="plan in variant.selling_plan_allocations" class="product-header_subscription_radio-lable-small w-radio">
+                                    <input class="w-form-formradioinput radio_button w-radio-input" li-object:value="plan.selling_plan.id" name="selling_plan" data-name="selling_plan" x-model="selling_plan" type="radio" id="radio-4" value="{{ plan.selling_plan.id }}">
+                            <span li-object="plan.selling_plan.name" class="radio_label w-form-label" for="radio-4">{{ plan.selling_plan.name }}</span>
+                            
+                                  
+                            <div class="radio_label">-</div>
+                            
+                                  
+                            <div li-object="plan.price | money" class="radio_label">{{ plan.price | money }}</div>
+                            
+                                
+                        </label>
+{% endfor %}
+                              </div>
+                              <div data-animation="gsap-line-width" class="horizontal-divider"></div>
+                            </div>
+                                  </div>
+    </template>
+                            <template x-if="sellingplan_active">
+            <input name="selling_plan" type="hidden" x-model="selling_plan" li-js-if="sellingplan_active">
+    </template>
+                            
+                        
+                    {% endfor %}    </div>
+                          </div>
+{% endif %}
+                      {% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+    
+                        <template x-for="(option, optionKey) in product.options" :key="optionKey">
+    <div li-element="product-options-loop" class="product-header_option" data-ProductVariantsLoop="true">
+                          <div li-element="product-options-name" class="product-info_meta-heading" x-text="option">Variant</div>
+                          <div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+    <label li-element="product-option-loop" class="product-header_radio-4 w-radio">
+                              <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button-2 w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"><span li-element="product-option-name" class="text-size-regular text-weight-semibold w-form-label" for="radio-4" x-text="variantName" :for="variantName">XS</span>
+                            </label></template></div>
+                        </div></template>
+                          </div>
+{% endif %}
+                      <div class="spacer-xsmall"></div>
+                      <div class="product-header_ad-to-cart-wrapper">
+                        <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_quantity">
+        
+                          <div class="quantity_wrapper">
+                            <div class="product-info_meta-heading">Quantity</div><input class="form-input is-quantity w-input" maxlength="256" name="quantity-2" li-element="add-to-cart-quantity" data-name="Quantity 2" placeholder="1" type="number" id="quantity-2" required="" x-model="quantity">
+                          </div><button li-element="add-to-cart" class="button-2 is-secondary" @click="addToCart($event, true)" :disabled="!addToCartButton">
+                            <div li-js-price="product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price" class="product_price" x-text="LiquifyHelper.moneyFormat(product.selected_or_first_available_variant.selling_plan_allocations.find(allocation => allocation.selling_plan_id == selling_plan)?.price ?? price, true, '{{ shop.money_with_currency_format }}')">£8.25</div>
+                            <div class="product_price">-</div>
+                            <div>Add to Cart</div>
+                            <div>→</div>
+                          </button>
+                                </div>
+    </template>
+                        <template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available">
+        
+                          <a href="#" class="button is-secondary max-width-full pointer-events-off text-align-left w-button">Not in Stock</a>
+                                </div>
+    </template>
+                      </div>
+                    {% endform %}
+                    <div class="out-of-stock-state w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="error-state w-form-fail">
+                      <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                  </div>
+                  <div li-object:data-attribute="product.handle" data-attribute="{{ product.handle }}"></div>
+                </div>
+                <div class="product_top-info_layout">
+                  <div>
+                    {% if product.metafields.custom.key_features %}    <div data-hover="false" data-delay="0" li-if="product.metafields.custom.key_features" class="product-info_dropdown w-dropdown">
+    
+                      <div class="product-info_dropdown-toggle w-dropdown-toggle">
+                        <div class="w-icon-dropdown-toggle"></div>
+                        <div class="heading-style-h3 text-style-allcaps">Key Features</div>
+                      </div>
+                      <nav class="product-info_dropdown-list w-dropdown-list">
+                        <div li-object="product.metafields.custom.key_features | metafield_tag" class="product-info_rich-text w-richtext">{{ product.metafields.custom.key_features | metafield_tag }}</div>
+                      </nav>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.specifications %}    <div data-hover="false" data-delay="0" li-if="product.metafields.custom.specifications" class="product-info_dropdown w-dropdown">
+    
+                      <div class="product-info_dropdown-toggle w-dropdown-toggle">
+                        <div class="w-icon-dropdown-toggle"></div>
+                        <div class="heading-style-h3 text-style-allcaps">Specifications</div>
+                      </div>
+                      <nav class="product-info_dropdown-list w-dropdown-list">
+                        <div li-object="product.metafields.custom.specifications | metafield_tag" class="product-info_rich-text w-richtext">{{ product.metafields.custom.specifications | metafield_tag }}</div>
+                      </nav>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.importers_notes %}    <div data-hover="false" data-delay="0" li-if="product.metafields.custom.importers_notes" class="product-info_dropdown w-dropdown">
+    
+                      <div class="product-info_dropdown-toggle w-dropdown-toggle">
+                        <div class="w-icon-dropdown-toggle"></div>
+                        <div class="heading-style-h3 text-style-allcaps">Importers Notes</div>
+                      </div>
+                      <nav class="product-info_dropdown-list w-dropdown-list">
+                        <div li-object="product.metafields.custom.importers_notes | metafield_tag" class="product-info_rich-text w-richtext">{{ product.metafields.custom.importers_notes | metafield_tag }}</div>
+                      </nav>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.roasters_notes %}    <div data-hover="false" data-delay="0" li-if="product.metafields.custom.roasters_notes" class="product-info_dropdown w-dropdown">
+    
+                      <div class="product-info_dropdown-toggle w-dropdown-toggle">
+                        <div class="w-icon-dropdown-toggle"></div>
+                        <div class="heading-style-h3 text-style-allcaps">Roasters Notes</div>
+                      </div>
+                      <nav class="product-info_dropdown-list w-dropdown-list">
+                        <div li-object="product.metafields.custom.roasters_notes | metafield_tag" class="product-info_rich-text w-richtext">{{ product.metafields.custom.roasters_notes | metafield_tag }}</div>
+                      </nav>
+                        </div>
+{% endif %}
+                    {% if product.metafields.custom.farmers_notes %}    <div data-hover="false" data-delay="0" li-if="product.metafields.custom.farmers_notes" class="product-info_dropdown w-dropdown">
+    
+                      <div class="product-info_dropdown-toggle w-dropdown-toggle">
+                        <div class="w-icon-dropdown-toggle"></div>
+                        <div class="heading-style-h3 text-style-allcaps">Farmers Notes</div>
+                      </div>
+                      <nav class="product-info_dropdown-list w-dropdown-list">
+                        <div li-object="product.metafields.custom.farmers_notes | metafield_tag" class="product-info_rich-text w-richtext">{{ product.metafields.custom.farmers_notes | metafield_tag }}</div>
+                      </nav>
+                        </div>
+{% endif %}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div> {% schema %} {
+          </div> {% schema %} {
     "tag": "section",
     "name": "Product-Hero",
-    "class": "product-hero_section",
+    "class": "section_hero",
+    "settings": [
+        {
+            "id": "text_without_subscription",
+            "type": "text",
+            "label": "without Subscription",
+            "default": "One Time Purchase"
+        },
+        {
+            "id": "text_with_subscription",
+            "type": "text",
+            "label": "with Subscription",
+            "default": "Subscribe and Save"
+        }
+    ],
     "presets": [
         {
             "name": "Product-Hero",
