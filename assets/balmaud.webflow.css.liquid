@@ -1673,7 +1673,6 @@ figcaption {
 
 .nav_component:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
   color: #000;
-  background-color: #fff;
   border-bottom: 1px solid #000;
   transition: border-color .2s, color .2s;
 }
@@ -1716,6 +1715,10 @@ figcaption {
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   display: flex;
+}
+
+.nav_menu:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
+  position: relative;
 }
 
 .nav_menu_link {
@@ -2091,7 +2094,14 @@ figcaption {
 }
 
 .nav_ticker_container {
+  z-index: 2;
   background-color: var(--brand-orange);
+  position: relative;
+}
+
+.nav_ticker_container:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
+  z-index: 2;
+  position: relative;
 }
 
 .page_code_wrap-2 {
@@ -2488,12 +2498,19 @@ figcaption {
 }
 
 .nav_link {
+  z-index: 2;
   text-transform: uppercase;
   font-size: .875rem;
   font-weight: 400;
   text-decoration: none;
   transition: color .2s;
   display: block;
+  position: relative;
+}
+
+.nav_link:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
+  z-index: 2;
+  position: relative;
 }
 
 .nav_link:hover {
@@ -2509,6 +2526,10 @@ figcaption {
   text-underline-position: under;
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+
+.nav_link.w--current:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
+  color: #000;
 }
 
 .nav_link.temporary {
@@ -4442,6 +4463,17 @@ figcaption {
 .product-cta_paragraph {
   z-index: 2;
   position: relative;
+}
+
+.nav_background {
+  pointer-events: none;
+  display: block;
+  position: absolute;
+  inset: 0%;
+}
+
+.nav_background:where(.w-variant-5bc79521-0627-45d0-3288-096227e51632) {
+  background-color: #fff;
 }
 
 @media screen and (max-width: 991px) {
@@ -6689,7 +6721,7 @@ figcaption {
   grid-area: 2 / 8 / 3 / 13;
 }
 
-#w-node-_50fa139b-c3a7-ae04-24e7-fd64e7fa1a86-777000c8, #w-node-_8a4b67ae-9d1d-6a87-1770-89f98077db60-777000c8, #w-node-_47559588-01d8-45f1-7948-31586cbb0121-777000c8, #w-node-be0f875e-1b62-c107-497e-cc98ed867d68-777000c8, #w-node-cb2ff61e-9eb7-b793-192f-c8460f9d4236-777000c8 {
+#w-node-_50fa139b-c3a7-ae04-24e7-fd64e7fa1a86-777000c8, #w-node-_10e9ed6d-be21-0581-aae4-7ea325816469-777000c8, #w-node-_47559588-01d8-45f1-7948-31586cbb0121-777000c8, #w-node-be0f875e-1b62-c107-497e-cc98ed867d68-777000c8, #w-node-cb2ff61e-9eb7-b793-192f-c8460f9d4236-777000c8 {
   grid-area: span 1 / span 5 / span 1 / span 5;
 }
 
