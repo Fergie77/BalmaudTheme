@@ -1,11 +1,11 @@
 <div balmaud-animation="nav-colour-swap" class="product-hero_wrapper">
           <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
 <div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
-            <div balmaud-animation="fade-in" id="w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b" class="product-hero_info_layout">
+            <div balmaud-animation="fade-in" id="w-node-ccbcedbc-a4cd-a65e-b265-d3a1b3d77f9b-b3d77f98" class="product-hero_info_layout">
               <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">
 {{ product.title }}
 </h1>
-              <div li-object="product.description" class="w-richtext">{{ product.description }}</div>
+              <div li-object="product.description" class="no-trim w-richtext">{{ product.description }}</div>
               <div class="product-header_form-block w-form">
                 {% form 'product', product, class: 'product-header_default-state' %}
 {% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
@@ -21,13 +21,19 @@
                     </div></template>
                       </div>
 {% endif %}
+                  <div>
+{{ section.settings.text_estimated_delivery_text }}
+</div>
+                  <div>
+{{ section.settings.text_pre_order_info_text }}
+</div>
                   <div class="product-header_add-to-cart-wrapper">
                     <template x-if="selected_or_first_available_variant.available">
             <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
         <input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
                       <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to Basket</a>
                       <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
-<a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout($event, true)">Buy Now</a>
+<a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout($event, true)">Pre Order</a>
                             </div>
     </template>
                     <template x-if="!selected_or_first_available_variant.available">
@@ -52,7 +58,7 @@
                     <div class="product-hero_dropdown-toggle_icon">+</div>
                   </div>
                   <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.tasting_notes | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.tasting_notes | metafield_tag }}</div>
+                    <div li-object="product.metafields.custom.tasting_notes | metafield_tag" class="product-hero_dropdown_paragraph no-trim w-richtext">{{ product.metafields.custom.tasting_notes | metafield_tag }}</div>
                   </div>
                 </div>
                 <div class="product-hero_dropdown">
@@ -61,7 +67,7 @@
                     <div class="product-hero_dropdown-toggle_icon">+</div>
                   </div>
                   <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.allergens | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.allergens | metafield_tag }}</div>
+                    <div li-object="product.metafields.custom.allergens | metafield_tag" class="product-hero_dropdown_paragraph no-trim w-richtext">{{ product.metafields.custom.allergens | metafield_tag }}</div>
                   </div>
                 </div>
                 <div class="product-hero_dropdown">
@@ -70,12 +76,12 @@
                     <div class="product-hero_dropdown-toggle_icon">+</div>
                   </div>
                   <div class="product-hero_dropdown_navigation">
-                    <div li-object="product.metafields.custom.delivery_information | metafield_tag" class="product-hero_dropdown_paragraph w-richtext">{{ product.metafields.custom.delivery_information | metafield_tag }}</div>
+                    <div li-object="product.metafields.custom.delivery_information | metafield_tag" class="product-hero_dropdown_paragraph no-trim w-richtext">{{ product.metafields.custom.delivery_information | metafield_tag }}</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div id="w-node-_8c7ea2ab-254b-f395-76e7-df40297bc0f6-35b5186b" class="product-hero_slider">
+            <div id="w-node-ccbcedbc-a4cd-a65e-b265-d3a1b3d77fd2-b3d77f98" class="product-hero_slider">
               {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
                                     <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
                         </div>
@@ -86,6 +92,20 @@
     "tag": "section",
     "name": "Product-Hero",
     "class": "product-hero_section",
+    "settings": [
+        {
+            "id": "text_estimated_delivery_text",
+            "type": "text",
+            "label": "Estimated Delivery Text",
+            "default": "Estimated Delivery Date: "
+        },
+        {
+            "id": "text_pre_order_info_text",
+            "type": "text",
+            "label": "Pre Order Info Text",
+            "default": "Note: this is a pre-order. Your product will ship based on the estimated delivery date."
+        }
+    ],
     "presets": [
         {
             "name": "Product-Hero",
