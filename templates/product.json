@@ -11,7 +11,10 @@
   "sections": {
     "product_hero": {
       "type": "product_hero",
-      "settings": {}
+      "settings": {
+        "text_estimated_delivery_text": "Estimated Delivery Date: 20/12/25",
+        "text_pre_order_info_text": "Note: this is a pre-order. Your product will ship based on the estimated delivery date."
+      }
     },
     "floating_add_to_cart": {
       "type": "floating_add_to_cart",
@@ -19,19 +22,31 @@
     },
     "product_info_1": {
       "type": "product_info_1",
-      "settings": {}
+      "settings": {
+        "text_heading": "The Gold<br>Standard",
+        "text_paragraph": "Cover crops can boost soil organic matter, improve rooting, help suppress weeds and lower herbicide use, reducing the need for “steel and diesel”.<br><br>Some spring barley growers have cut their nitrogen use by 50-75% by taking this soil-focused approach, says Mr Fuller.<br><br>With better crop genetics seen as essential in unlocking this sustainability equation, there is early interest in new spring barley malting varieties, such as Curtis, which may help with this process and also make the malting industry less reliant on number one variety, Laureate Curtis, from plant breeder KWS, was a new entry to the 2023-24 AHDB Recommended List announced at the end of last year, and shows some advantages in terms of yield."
+      }
     },
     "product_info_2": {
       "type": "product_info_2",
-      "settings": {}
+      "settings": {
+        "text_heading": "A TASTE OF<br>THE TERROIR",
+        "text_paragraph": "With better crop genetics seen as essential in unlocking this sustainability equation, there is early interest in new spring barley malting varieties, such as Curtis, which may help with this process and also make the malting industry less reliant on number one variety, Laureate Curtis, from plant breeder KWS, was a new entry to the 2023-24 AHDB Recommended List announced at the end of last year, and shows some advantages in terms of yield."
+      }
     },
     "product_info_3": {
       "type": "product_info_3",
-      "settings": {}
+      "settings": {
+        "text_heading": "OUR FIRST<br>SPIRIT. GROWN<br>ON OUR LAND",
+        "text_paragraph": "Cover crops can boost soil organic matter, improve rooting, help suppress weeds and lower herbicide use, reducing the need for “steel and diesel”.<br><br>Some spring barley growers have cut their nitrogen use by 50-75% by taking this soil-focused approach, says Mr Fuller.<br><br>With better crop genetics seen as essential in unlocking this sustainability equation, there is early interest in new spring barley malting varieties, such as Curtis, which may help with this process and also make the malting industry less reliant on number one variety, Laureate Curtis, from plant breeder KWS, was a new entry to the 2023-24 AHDB Recommended List announced at the end of last year, and shows some advantages in terms of yield."
+      }
     },
     "diary": {
       "type": "diary",
-      "settings": {}
+      "settings": {
+        "text_button_text": "Shop Now",
+        "url_link": ""
+      }
     }
   },
   "layout": "product",
