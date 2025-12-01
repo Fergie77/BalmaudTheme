@@ -4,7 +4,7 @@
     // Split the path and filter out empty segments (caused by leading/trailing slashes)
     const parts = window.location.pathname.split("/").filter(Boolean);
     // The slug is always the last segment, regardless of "/pages/slug" structure
-    const slug = window.location.pathname;
+    const slug = parts[parts.length - 1];
     alert(slug);
     // Construct the API URL
     const apiUrl = `https://x8ki-letl-twmt.n7.xano.io/api:LKU_dBdO/balmaud_qr_codes?uuid=${slug}`;
