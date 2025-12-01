@@ -5,7 +5,6 @@
     const parts = window.location.pathname.split("/").filter(Boolean);
     // The slug is always the last segment, regardless of "/pages/slug" structure
     const slug = parts[parts.length - 1];
-    alert(slug);
     // Construct the API URL
     const apiUrl = `https://x8ki-letl-twmt.n7.xano.io/api:LKU_dBdO/balmaud_qr_codes?uuid=${slug}`;
     // Open the vCard in the same tab
@@ -16,7 +15,7 @@
   });
 </script>
         </div>
-        <h1>
+        <h1 class="hide">
 {{ section.settings.text_heading }}
 </h1> {% schema %} {
     "tag": "div",
