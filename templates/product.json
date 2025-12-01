@@ -43,6 +43,7 @@
     },
     "diary": {
       "type": "diary",
+      "disabled": true,
       "settings": {
         "text_button_text": "Shop Now",
         "url_link": ""
