@@ -72,11 +72,27 @@
                 </div>
               </div>
             </div>
-            <div id="w-node-ccbcedbc-a4cd-a65e-b265-d3a1b3d77fd2-b3d77f98" class="product-hero_slider">
-              {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
+            <div id="w-node-_566247fd-a0e3-4c63-7770-32a52392631b-b3d77f98" class="product-hero_slider_wrapper">
+              <div class="product-hero_slider">
+                {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
                                     <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
                         </div>
 {% endfor %}
+              </div>
+              <div class="product-hero_slider_arrow is-left"></div>
+              <div class="product-hero_slider_arrow is-right"></div>
+              <div class="w-embed">
+                <style>
+/* LEFT ARROW (<) */
+.product-hero_slider_arrow.is-left {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><text x='4' y='12' fill='rgba(0,0,0,0.75)' font-size='12'><") 12 12, pointer;
+}
+/* RIGHT ARROW (>) */
+.product-hero_slider_arrow.is-right {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><text x='4' y='12' fill='rgba(0,0,0,0.75)' font-size='12'>>") 12 12, pointer;
+}
+</style>
+              </div>
             </div>
           </div>
         </div> {% schema %} {
