@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "landing_hero": {
+            "type": "landing_hero"
+        }
+    },
+    "layout": "page.vera-wang",
+    "wrapper": "",
+    "order": [
+        "landing_hero"
+    ]
+}
