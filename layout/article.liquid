@@ -682,9 +682,9 @@ padding: 40px;
           </div>
           <div id="ageGate" class="age-gate">
             <div class="age-gate_wrapper">
-              <h2 class="age-gate_heading">Enter Your Year of Birth</h2>
-              <form id="ageForm" class="age-form"><input type="number" id="birthYearInput" placeholder="e.g. 1967" required="" class="age-input"><button id="submitYearButton" type="submit" class="age-submit button is-dark">Enter</button>
-                <p id="errorMsg" class="age-error">You must be at least 18 years old to enter.</p>
+              <h2 class="age-gate_heading">Enter Your Date of Birth</h2>
+              <form id="ageForm" class="age-form"><input type="date" id="birthYearInput" placeholder="e.g. 1967" required="" class="age-input"><button id="submitYearButton" type="submit" class="age-submit button is-dark">Enter</button>
+                <p id="errorMsg" class="age-error">Are you of legal drinking age in your country?</p>
               </form><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 174 29" fill="none" class="age-gate_logo">
                 <path d="M162.352 0.474609C162.352 0.474609 174 0.474609 174 12.8359C174 28.0498 160.727 28.0894 160.727 28.0894H151.892C153.319 26.4254 153.358 23.969 153.358 23.6124V4.95161C153.358 4.59504 153.319 2.13863 151.892 0.474609H162.352ZM159.777 25.4349C161.322 25.4349 168.533 24.8406 168.533 13.7471C168.533 3.16873 160.49 3.16873 160.49 3.16873H158.667V25.4349H159.777Z" fill="currentColor"></path>
                 <path d="M142.528 0.474609H149.184C147.837 2.77254 147.837 4.99123 147.837 4.99123C147.837 4.99123 147.837 16.0054 147.837 18.858C147.837 21.7503 146.292 28.5648 137.536 28.5648C129.295 28.5648 127.512 23.4935 127.393 18.1449V4.95161C127.354 4.63465 127.354 2.13863 125.927 0.474609H134.445C133.019 2.77254 133.019 4.99123 133.019 4.99123C133.059 9.58709 133.138 13.9452 133.138 18.7788C133.138 23.652 137.021 25.5934 140.19 25.5934C143.479 25.5934 143.875 21.4333 143.875 18.9769C143.875 16.5205 143.875 4.87237 143.875 4.87237C143.875 4.3177 143.598 1.98015 142.528 0.474609Z" fill="currentColor"></path>
@@ -725,44 +725,50 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 </script>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const submitBtn = document.getElementById("submitYearButton");
-    const birthYearInput = document.getElementById("birthYearInput");
-    const mainContent = document.getElementById("mainContent");
-    const ageGate = document.getElementById("ageGate");
-    const errorMsg = document.getElementById("errorMsg");
-    const minimumAge = 18;
-    if (localStorage.getItem('ageVerified') === 'true') {
-    if(ageGate){
-    	ageGate.style.display = "none";
+ document.addEventListener("DOMContentLoaded", function () {
+  const submitBtn = document.getElementById("submitYearButton");
+  const birthDateInput = document.getElementById("birthYearInput");
+  const mainContent = document.getElementById("mainContent");
+  const ageGate = document.getElementById("ageGate");
+  const errorMsg = document.getElementById("errorMsg");
+  function getMinimumAgeByLocale() {
+    const locale = navigator.language || navigator.userLanguage;
+    if (locale && locale.toLowerCase().includes("en-us")) {
+      return 21; // USA
     }
-      if(mainContent){
-      mainContent.style.display = "block";
-      }
-    }
-    else{
+    return 18; // default
+  }
+  const minimumAge = getMinimumAgeByLocale();
+  if (localStorage.getItem("ageVerified") === "true") {
+    if (ageGate) ageGate.style.display = "none";
+    if (mainContent) mainContent.style.display = "block";
+  } else {
     ageGate.style.display = "flex";
+  }
+  submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    const birthDateValue = birthDateInput.value;
+    if (!birthDateValue) {
+      errorMsg.style.display = "block";
+      return;
     }
-    submitBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const birthYear = parseInt(birthYearInput.value);
-      const currentYear = new Date().getFullYear();
-      const age = currentYear - birthYear;
-      if (!isNaN(age) && age >= minimumAge) {
-        if (typeof localStorage !== "undefined") {
-  localStorage.setItem("ageVerified", "true");
-}
-if(ageGate){
-	ageGate.style.display = "none";
-}
-        if(mainContent){
-        mainContent.style.display = "block";
-        }
-      } else {
-        errorMsg.style.display = "block";
-      }
-    });
+    const birthDate = new Date(birthDateValue);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const birthdayPassed =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate());
+    if (!birthdayPassed) age--;
+    if (!isNaN(age) && age >= minimumAge) {
+      localStorage.setItem("ageVerified", "true");
+      if (ageGate) ageGate.style.display = "none";
+      if (mainContent) mainContent.style.display = "block";
+    } else {
+      errorMsg.style.display = "block";
+    }
   });
+});
 </script>
   <script src="https://balmaud.netlify.app/main.js"></script>
   <!-- 

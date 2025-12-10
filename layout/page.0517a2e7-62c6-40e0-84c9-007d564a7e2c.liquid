@@ -92,44 +92,50 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 </script>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const submitBtn = document.getElementById("submitYearButton");
-    const birthYearInput = document.getElementById("birthYearInput");
-    const mainContent = document.getElementById("mainContent");
-    const ageGate = document.getElementById("ageGate");
-    const errorMsg = document.getElementById("errorMsg");
-    const minimumAge = 18;
-    if (localStorage.getItem('ageVerified') === 'true') {
-    if(ageGate){
-    	ageGate.style.display = "none";
+ document.addEventListener("DOMContentLoaded", function () {
+  const submitBtn = document.getElementById("submitYearButton");
+  const birthDateInput = document.getElementById("birthYearInput");
+  const mainContent = document.getElementById("mainContent");
+  const ageGate = document.getElementById("ageGate");
+  const errorMsg = document.getElementById("errorMsg");
+  function getMinimumAgeByLocale() {
+    const locale = navigator.language || navigator.userLanguage;
+    if (locale && locale.toLowerCase().includes("en-us")) {
+      return 21; // USA
     }
-      if(mainContent){
-      mainContent.style.display = "block";
-      }
-    }
-    else{
+    return 18; // default
+  }
+  const minimumAge = getMinimumAgeByLocale();
+  if (localStorage.getItem("ageVerified") === "true") {
+    if (ageGate) ageGate.style.display = "none";
+    if (mainContent) mainContent.style.display = "block";
+  } else {
     ageGate.style.display = "flex";
+  }
+  submitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    const birthDateValue = birthDateInput.value;
+    if (!birthDateValue) {
+      errorMsg.style.display = "block";
+      return;
     }
-    submitBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const birthYear = parseInt(birthYearInput.value);
-      const currentYear = new Date().getFullYear();
-      const age = currentYear - birthYear;
-      if (!isNaN(age) && age >= minimumAge) {
-        if (typeof localStorage !== "undefined") {
-  localStorage.setItem("ageVerified", "true");
-}
-if(ageGate){
-	ageGate.style.display = "none";
-}
-        if(mainContent){
-        mainContent.style.display = "block";
-        }
-      } else {
-        errorMsg.style.display = "block";
-      }
-    });
+    const birthDate = new Date(birthDateValue);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const birthdayPassed =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate());
+    if (!birthdayPassed) age--;
+    if (!isNaN(age) && age >= minimumAge) {
+      localStorage.setItem("ageVerified", "true");
+      if (ageGate) ageGate.style.display = "none";
+      if (mainContent) mainContent.style.display = "block";
+    } else {
+      errorMsg.style.display = "block";
+    }
   });
+});
 </script>
   <script src="https://balmaud.netlify.app/main.js"></script>
   <!-- 
