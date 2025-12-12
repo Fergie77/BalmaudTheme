@@ -70,30 +70,26 @@
                     <div li-object="product.metafields.custom.delivery_information | metafield_tag" class="product-hero_dropdown_paragraph no-trim w-richtext">{{ product.metafields.custom.delivery_information | metafield_tag }}</div>
                   </div>
                 </div>
+                <div class="product-hero_dropdown">
+                  <div class="product-hero_dropdown_toggle">
+                    <div>How to Serve</div>
+                    <div class="product-hero_dropdown-toggle_icon">+</div>
+                  </div>
+                  <div class="product-hero_dropdown_navigation">
+                    <div li-object="product.metafields.custom.how_to_serve | metafield_tag" class="product-hero_dropdown_paragraph no-trim w-richtext">{{ product.metafields.custom.how_to_serve | metafield_tag }}</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="w-node-_566247fd-a0e3-4c63-7770-32a52392631b-b3d77f98" class="product-hero_slider_wrapper">
               <div class="product-hero_slider">
                 {% for image in product.images %}    <div li-for="image in product.images" class="product-hero_slider_slide">
-                                    <img class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt">
+                                    <img data-delay="0.33" class="product-hero_slider_image" src="{{ image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ image.alt }}" sizes="(max-width: 991px) 100vw, 983.9931030273438px" li-object:src="image.src | image_url: width: 1500" loading="lazy" li-object:alt="image.alt" srcset="{{ 'BALMAUD-GIN-POS-V4-POST-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD-GIN-POS-V4-POST-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD-GIN-POS-V4-POST-copy.webp' | asset_url }} 984w">
                         </div>
 {% endfor %}
               </div>
-              <div class="product-hero_slider_arrow is-left"></div>
-              <div class="product-hero_slider_arrow is-right"></div>
-              <div class="w-embed">
-                <style>
-/* LEFT ARROW (<) */
-.product-hero_slider_arrow.is-left {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><text x='4' y='12' fill='rgba(0,0,0,0.75)' font-size='12'><") 12 12, pointer;
-}
-/* RIGHT ARROW (>) */
-.product-hero_slider_arrow.is-right {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><text x='4' y='12' fill='rgba(0,0,0,0.75)' font-size='12'>>") 12 12, pointer;
-}
-</style>
-              </div>
             </div>
+            <div balmaud-animation="fade-in" id="w-node-_9f452a19-4186-02fb-a964-0afd390a7922-b3d77f98" class="product-hero_background-image_wrapper"><img src="{{ 'Frame-3.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'Frame-3-p-500.webp' | asset_url }} 500w, {{ 'Frame-3-p-800.webp' | asset_url }} 800w, {{ 'Frame-3-p-1080.webp' | asset_url }} 1080w, {{ 'Frame-3-p-1600.webp' | asset_url }} 1600w, {{ 'Frame-3.webp' | asset_url }} 1756w" alt="" class="product-hero_background-image"></div>
           </div>
         </div> {% schema %} {
     "tag": "section",
