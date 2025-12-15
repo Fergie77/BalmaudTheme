@@ -700,7 +700,11 @@ padding: 40px;
       </div>
     </div>
     {% if request.path contains '/policies/' %}
-      
+      <style>
+        .nav_container{
+        --base-color-neutral-white: black !important;
+        }
+      </style>
     {% section 'default' %}
   {% else %}
     {{ content_for_layout }}
