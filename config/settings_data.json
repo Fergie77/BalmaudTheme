@@ -20,8 +20,18 @@
       "footer": {
         "type": "footer",
         "settings": {}
+      },
+      "default": {
+        "type": "default",
+        "custom_css": [],
+        "settings": {}
       }
     },
     "content_for_index": []
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".nav_absolute{z-index: 10001;}"
+    ]
   }
 }
