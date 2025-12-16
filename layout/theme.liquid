@@ -701,8 +701,9 @@ padding: 40px;
       </div>
     </div>
       {% if request.path contains '/policies/' %}
-        <style>:root{--base-color-neutral--white: black !important;}</style>
+        
     {% section 'default' %}
+    <style>:root{--base-color-neutral--white: black !important;}</style>
   {% else %}
     {{ content_for_layout }}
   {% endif %}
