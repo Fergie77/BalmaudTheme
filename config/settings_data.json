@@ -25,13 +25,19 @@
         "type": "default",
         "custom_css": [],
         "settings": {}
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "checkbox_solid_nav": false
+        }
       }
     },
     "content_for_index": []
   },
   "platform_customizations": {
     "custom_css": [
-      ".nav_absolute{z-index: 10001;}"
+      ".nav_absolute {z-index: 10001;}"
     ]
   }
 }
