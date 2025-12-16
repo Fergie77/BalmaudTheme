@@ -703,17 +703,12 @@ padding: 40px;
       {% if request.path contains '/policies/' %}
   <style>
     /* Scope to policies pages only */
-    html, body {
-      --base-color-neutral--white: #000 !important;
+    .nav_brand {
+      color: var(--base-color-neutral--black) !important;
     }
 
     .nav_button_icon{
-    fill: var(--base-color-neutral--white) !important}
-
-    /* If your theme sets vars on :root at breakpoints, keep this too */
-    :root {
-      --base-color-neutral--white: #000 !important;
-    }
+    fill: var(--base-color-neutral--black) !important}
   </style>
 
   {% section 'default' %}
