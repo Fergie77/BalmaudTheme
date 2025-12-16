@@ -5763,14 +5763,18 @@ figcaption {
   }
 
   .product-hero_slider_wrapper {
+    align-self: center;
     width: auto;
     height: 40svh;
+    position: relative;
     left: 0;
     right: 0;
   }
 
   .product-hero_background-image_wrapper {
     width: calc(100% + var(--grid-gap--main) * 2);
+    position: absolute;
+    top: 0;
   }
 
   .heading-style-h3-4 {
@@ -6365,7 +6369,7 @@ figcaption {
   .product-hero_info_layout {
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
-    margin-top: 35vw;
+    margin-top: 22vw;
   }
 
   .product-header_buy-wrappper {
@@ -6428,7 +6432,7 @@ figcaption {
 
   .product-hero_slider_slide {
     aspect-ratio: 1;
-    height: auto;
+    height: 100%;
   }
 
   .mini-cart_component {
@@ -6475,7 +6479,12 @@ figcaption {
   }
 
   .product-hero_slider_wrapper {
-    height: 85vw;
+    height: 110vw;
+  }
+
+  .product-hero_background-image_wrapper {
+    width: auto;
+    height: 25rem;
   }
 
   .mini-cart_component-3 {

@@ -1,7 +1,7 @@
 <div balmaud-animation="nav-colour-swap" class="product-hero_wrapper">
           <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
 <div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
-            <div balmaud-animation="fade-in" id="w-node-ccbcedbc-a4cd-a65e-b265-d3a1b3d77f9b-b3d77f98" class="product-hero_info_layout">
+            <div fade-in-sooner="" balmaud-animation="fade-in" id="w-node-ccbcedbc-a4cd-a65e-b265-d3a1b3d77f9b-b3d77f98" class="product-hero_info_layout">
               <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">
 {{ product.title }}
 </h1>
