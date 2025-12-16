@@ -18,7 +18,7 @@
         "url_link": "shopify://products/highland-gin",
         "image_image": "shopify://shop_images/BALMAUD_TASTING_WIDE_v2_1_copy.webp",
         "image_mobile_image": "shopify://shop_images/Group_3.webp",
-        "background-color": "rgba(0,0,0,0)"
+        "background-color": "rgba(0,0,0,0.1)"
       }
     },
     "legacy": {
