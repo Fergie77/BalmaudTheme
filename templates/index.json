@@ -14,7 +14,7 @@
       "settings": {
         "image_hero_image": "shopify://shop_images/BALMAUD_TASTING_WIDE_v2_1_copy.webp",
         "image_hero_image_mobile": "shopify://shop_images/Group_3.webp",
-        "background-color": "rgba(0,0,0,0)"
+        "background-color": "rgba(0,0,0,0.1)"
       }
     }
   },
