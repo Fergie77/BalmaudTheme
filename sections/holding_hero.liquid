@@ -6,12 +6,12 @@
           <div class="hero_grid-text_text">Bottled<br>in Turriff</div>
           <div class="hero_grid-text_text">Product<br>of Scotland</div>
           <div class="hero_grid-text_text">Proudly<br>by Balmaud</div>
-        </div><video src="https://dl.dropbox.com/scl/fi/z1e1urrnd8fsgfwnq4h1h/BD_WEBSITE_HEADER.mp4?rlkey=r6x1v6w0s1imzmuoidnh1u2ln&dl=0" autoplay="true" loop="" muted="" playsinline="" class="hero_background-content"></video>
+        </div>
         <div class="holding-hero_bottom_layout">
           <h2 id="w-node-_4b1534fc-a620-5bf7-88cf-362885a23e4f-946dd468" class="holding-hero_bottom_heading">NEW SCHOOL DISTILLERS<br>OLD SCHOOL FARMERS</h2>
           <div id="w-node-_0af6ad9a-4771-6c3d-4083-919b4150854e-946dd468" class="holding-hero_form_wrapper">
             <h1 class="holding-hero_form_heading">Take a seat at our table</h1>
-            <div class="holding-hero_form_paragraph">From grain to glass, we remain committed to the land we farm and the quality we craft. There are no shortcuts, just dedication. Bringing a new vision to an age-old craft, we marry time-honoured techniques with innovative thinking to create whisky that transcends eras. We welcome you to join in our journey.</div>
+            <div class="holding-hero_form_paragraph">From grain to glass, we remain committed to the land we farm and the quality we craft. There are no shortcuts, just dedication. Bringing a new vision to an age-old craft, we marry time-honoured techniques with innovative thinking to create whisky that transcends eras. We welcome you to join in our journey.<br><br>to stay up to date with events, information and product launches please sign up below</div>
             <div class="holding-hero_form_block w-form">
               <form id="email-form" name="email-form" data-name="Email Form" action="https://f117ef4c.sibforms.com/serve/MUIFADLhFILOFIEKm72p8I2UP6sZosAShVw3FKyBlxz4wH5htWj8ly7dAMBVsy-jrGTzv-RBZnS33sa84LoenKELWLgCG6jZStOlhpuKF0zGfLi2tt-cBY5_oxrktYfWAousfTpBogpHRAMuzo95wrDns-GWljR0b7ETbHhaCzgGYHz0ApHdL7m_MyVn1uXKKkYos98puCWyt0eq" method="post" class="holding-hero_form_form" data-wf-page-id="675c6140230093d4946dd468" data-wf-element-id="56b2a715-3386-907e-f311-528749d54d57"><input class="holding-hero_form_field w-input" maxlength="256" name="FIRSTNAME" data-name="FIRSTNAME" placeholder="Name" type="text" id="FIRSTNAME" required=""><input class="holding-hero_form_field w-input" maxlength="256" name="EMAIL" data-name="EMAIL" placeholder="Email" type="email" id="EMAIL" required="">
                 <div class="margin-top margin-small"><input type="submit" data-wait="Please wait..." class="button w-button" value="Sign Up"></div>
@@ -24,10 +24,25 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="hero_background_wrapper"><img src="{{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 500w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 800w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 1080w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 1600w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 2000w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 2600w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 3200w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 3840w" alt="" class="hero_background-content">
+          
+          <div class="hide w-embed">{
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background colour",
+            "default": "rgba(0,0,0,0.85)"
+            }</div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Holding-Hero",
     "class": "section_holding-hero",
+    "settings": [
+        {
+            "type": "header",
+            "content": "background_color"
+        }
+    ],
     "presets": [
         {
             "name": "Holding-Hero",
