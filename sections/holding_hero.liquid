@@ -30,13 +30,8 @@
 {% else %}
 <img class="hero_background-content" src="{{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'BALMAUD_TASTING_WIDE-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD_TASTING_WIDE-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD_TASTING_WIDE-copy-p-1080.webp' | asset_url }} 1080w, {{ 'BALMAUD_TASTING_WIDE-copy-p-1600.webp' | asset_url }} 1600w, {{ 'BALMAUD_TASTING_WIDE-copy-p-2000.webp' | asset_url }} 2000w, {{ 'BALMAUD_TASTING_WIDE-copy-p-2600.webp' | asset_url }} 2600w, {{ 'BALMAUD_TASTING_WIDE-copy-p-3200.webp' | asset_url }} 3200w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 3840w">
 {% endif %}
-          <div class="hide w-embed">{
-            "type": "color_background",
-            "id": "background_color",
-            "label": "Background colour",
-            "default": "rgba(0,0,0,0.85)"
-            }</div>
           
+          <div style="{{section.settings.background-color}}" class="hero_background_overlay"></div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Holding-Hero",
@@ -48,11 +43,14 @@
             "label": "Hero Image"
         },
         {
-            "type": "color_background",
-            "id": "background_color",
-            
-            "label": "Background",
-  "default": "rgba(0,0,0,0.85)"
+            "type": "header",
+            "content": "background-color"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#EDEDE9"
         }
     ],
     "presets": [
