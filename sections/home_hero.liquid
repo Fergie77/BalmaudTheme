@@ -26,11 +26,15 @@
               <p class="hero_detail-text">Single estate distillery</p>
               <p class="hero_detail-text">Single estate distillery</p>
             </div>
-          </div>{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content' }}
+          </div>
+          <div balmaud-animation="content-fade-in" class="hero_background_wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: class: 'hero_background-content', sizes: '100vw', loading: 'lazy' }}
 {% else %}
-<img src="{{ 'image-30.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content">
+<img class="hero_background-content" src="{{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'BALMAUD_TASTING_WIDE-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD_TASTING_WIDE-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD_TASTING_WIDE-copy-p-1080.webp' | asset_url }} 1080w, {{ 'BALMAUD_TASTING_WIDE-copy-p-1600.webp' | asset_url }} 1600w, {{ 'BALMAUD_TASTING_WIDE-copy-p-2000.webp' | asset_url }} 2000w, {{ 'BALMAUD_TASTING_WIDE-copy-p-2600.webp' | asset_url }} 2600w, {{ 'BALMAUD_TASTING_WIDE-copy-p-3200.webp' | asset_url }} 3200w, {{ 'BALMAUD_TASTING_WIDE-copy.webp' | asset_url }} 3840w">
 {% endif %}
+            
+            <div style="background:{{section.settings.background-color}}" class="hero_background_overlay"></div>
+          </div>
         </div> {% schema %} {
     "tag": "section",
     "name": "Home Hero",
@@ -63,6 +67,16 @@
             "id": "image_image",
             "type": "image_picker",
             "label": "Image"
+        },
+        {
+            "type": "header",
+            "content": "background-color"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#EDEDE9"
         }
     ],
     "presets": [
