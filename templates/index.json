@@ -11,7 +11,9 @@
   "sections": {
     "holding_hero": {
       "type": "holding_hero",
-      "settings": {}
+      "settings": {
+        "background-color": "rgba(0,0,0,0)"
+      }
     }
   },
   "layout": "theme",
