@@ -11,27 +11,71 @@
   "sections": {
     "cask_hero": {
       "type": "cask_hero",
-      "settings": {}
+      "settings": {
+        "text_heading_eyebrow": "Private Casks",
+        "text_heading": "Mark your own legacy"
+      }
     },
     "casks_intro": {
       "type": "casks_intro",
-      "settings": {}
+      "settings": {
+        "text_heading": "Our first drops of spirit",
+        "text_heading_2": "Welcome to the family",
+        "text_paragraph_1": "To mark the launch of Balmaud, we are offering a limited number of private casks — each one representing a rare opportunity to own a piece of our earliest spirit.",
+        "text_paragraph_2": "This isn’t just a purchase. It’s a moment in time. A chance to shape the first chapter of our story — and to enjoy something deeply personal, deeply rooted.<br>",
+        "text_paragraph_3": "This is a chance for you to mark a special moment, be that the birth of family member, an anniversary, a special occasion, or your discovery and partnership with our distillery."
+      }
+    },
+    "casks_sign_up_8xbKTh": {
+      "type": "casks_sign_up",
+      "custom_css": [
+        "/* Desktop only */@media (min-width: 400px) and (orientation: portrait) {.casks_sign-up_wrapper {display: none; }}"
+      ],
+      "name": "Casks Sign Up",
+      "settings": {
+        "text_text": "Your legacy begins now",
+        "text_paragraph": "Enter your details and one of our distillery staff will be in touch shortly to talk to you in more detail"
+      }
     },
     "journey": {
       "type": "journey",
-      "settings": {}
+      "settings": {
+        "text_heading": "The journey of cask ownership",
+        "text_filling": "Every cask will be filled, stored, and matured here on site in our bonded warehouse, watched over carefully as the years unfold.",
+        "text_storage": "Your cask will mature on-site in our bonded warehouse for up to 10 years, with the potential to extend maturation period, to be agreed with distillery.",
+        "text_sampling": "Over time, the spirit will deepen in character shaped by the cask, the air, and the passage of seasons. Samples will be available upon request, and our team will guide you through key decisions from bottling timing to flavour profile development.",
+        "text_security": "Each cask is insured at purchase and securely stored in our on-site bonded warehouse throughout its maturation, with the option of a cask buy-back available."
+      }
     },
     "moment": {
       "type": "moment",
-      "settings": {}
+      "settings": {
+        "text_heading_eyebrow": "A Highland Single eState Distillery",
+        "text_heading": "A MOMENT IN HISTORY IS UNFOLDING",
+        "text_paragraph_1": "As one of the only Highland single estate distilleries, we offer something truly rare: complete provenance. From field to bottle, every step of our whisky’s journey happens on our estate,  the barley is grown in our fields, the water drawn from our land, and the spirit distilled and matured on-site.<br>",
+        "text_paragraph_2": "This unique level of control ensures exceptional quality, a lighter environmental footprint, and an authentic expression of our Highland terroir. It’s whisky with a true sense of place, crafted with integrity, rooted in heritage.<br>",
+        "text_paragraph_3": "Our barley is grown and harvested in the fields surrounding the distillery, a deliberate choice to preserve freshness, flavour, and a connection to place. The soil is carefully conditioned, nourished and watched closely through the changing seasons. We plant early, giving our crop more time to develop. The result is a raw ingredient that speaks of its landscape, refined, reliable, and rich in character.<br>"
+      }
     },
     "cask_options": {
       "type": "cask_options",
-      "settings": {}
+      "settings": {
+        "text_heading": "Cask options",
+        "text_paragraph_1": "We are offering a limited release of first-fill casks from the earliest days of distillation at Balmaud. Each cask is stored on-site at our bonded warehouse, located on the land where the barley was grown — a true single estate spirit.<br>",
+        "text_paragraph_2": "All casks will be filled with new make spirit on-site, with full traceability and ongoing support from our distilling team. Packaging and bottling options are available as the cask approaches maturity.",
+        "text_cask_type_1": "First fill, ex-Bourbon barrel<br>Standard Barrel (Approximately 200L)",
+        "text_cask_type_2": "First fill, ex-Sherry barrel<br>Hogshead Barrel (Approximately 225L)<br>",
+        "text_abv": "Approximately 63.5%",
+        "text_storage_period": "Up to 10 years in bond at Balmaud Distillery, Turriff AB53 5PT (extensions available upon request)",
+        "text_cask_buy_back": "Option of cask buy back available, to be agreed with distillery"
+      }
     },
     "casks_sign_up": {
       "type": "casks_sign_up",
-      "settings": {}
+      "settings": {
+        "text_text": "Your legacy begins now",
+        "text_paragraph": "Enter your details and one of our distillery staff will be in touch shortly to talk to you in more detail"
+      }
     }
   },
   "layout": "page.private-casks",
@@ -39,6 +83,7 @@
   "order": [
     "cask_hero",
     "casks_intro",
+    "casks_sign_up_8xbKTh",
     "journey",
     "moment",
     "cask_options",
