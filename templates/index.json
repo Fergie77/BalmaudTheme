@@ -87,12 +87,12 @@
     },
     "manifesto_2": {
       "type": "manifesto_2",
-      "disabled": true,
       "settings": {
+        "image_image": "shopify://shop_images/BALMAUD_HERO.webp",
         "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
         "text_heading": "Find your Unordinary way to drink",
         "text_button_text": "Shop Now",
-        "url_link": ""
+        "url_link": "shopify://products/scottish-dry-gin"
       }
     },
     "diary": {
