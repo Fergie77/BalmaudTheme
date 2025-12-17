@@ -26,9 +26,9 @@
               </div>
             </div>
           </div>{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content' }}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content is-dark' }}
 {% else %}
-<img src="{{ 'April_balmaud_shoot-6-1.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content">
+<img src="{{ 'April_balmaud_shoot-6-1.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content is-dark">
 {% endif %}
         </div> {% schema %} {
     "tag": "section",
