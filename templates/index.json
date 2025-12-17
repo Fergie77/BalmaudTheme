@@ -47,7 +47,7 @@
             "image_image": "shopify://shop_images/Mask_group.webp",
             "text_heading": "The Distillery",
             "text_paragraph": "Balmaud is one of a handful of single estate highland distilleries. Our team oversees every step of whisky making, giving us full control from field to still. From planting our crop to distilling our spirit on site, we hold ourselves to the very best.",
-            "text_button_text": "Shop Now",
+            "text_button_text": "Read more",
             "url_link": "shopify://pages/our-story"
           }
         },
@@ -58,7 +58,7 @@
             "image_image": "shopify://shop_images/Mask_group-1.webp",
             "text_heading": "Sustainability",
             "text_paragraph": "Sustainability sits at the heart of Balmaud and has shaped the project from the start. With deep respect for the land that fuels our craft, we keep looking ahead, reviewing how we work and choosing more sustainable options we can build into practice over time.",
-            "text_button_text": "Shop Now",
+            "text_button_text": "Read Now",
             "url_link": "shopify://pages/our-story"
           }
         }
@@ -72,8 +72,8 @@
     "manifesto": {
       "type": "manifesto",
       "settings": {
-        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
-        "text_heading": "Old School Farmers <br> New School Distillers"
+        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
+        "text_heading": "Old School Farmers  New School Distillers"
       }
     },
     "legacy_casks": {
@@ -81,7 +81,7 @@
       "settings": {
         "text_heading": "Own your Legacy",
         "text_paragraph": "From the fields of the North East of Scotland, Balmaud was born, a Highland Single Estate Distillery where every step of the whisky-making journey takes place on one site, from grain to glass.Crafted from barley grown on our own land and matured in our bonded warehouses, each cask marks a rare opportunity to own a piece of Balmaud’s earliest spirit – the beginning of a new legacy in Scotch whisky.",
-        "text_button_text": "Shop Now",
+        "text_button_text": "Enquire Now",
         "url_link": "shopify://pages/private-casks"
       }
     },
