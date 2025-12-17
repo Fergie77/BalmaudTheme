@@ -94,9 +94,9 @@
               <div class="mobile_timeline_info_component">
                 <div class="mobile_timeline_images_section">
                   <div class="mobile_timeline_images_block">{% if section.settings.image_timeline_image_8 %}
-{{ section.settings.image_timeline_image_8 | image_url: width: 1000 | image_tag: class: 'mobile_timeline_images_item _8', sizes: '(max-width: 991px) 100vw, 974.9913940429688px', loading: 'lazy' }}
+{{ section.settings.image_timeline_image_8 | image_url: width: 1000 | image_tag: class: 'mobile_timeline_images_item _8', sizes: '100vw', loading: 'lazy' }}
 {% else %}
-<img class="mobile_timeline_images_item _8" src="{{ 'Group-773.webp' | asset_url }}" alt="" sizes="(max-width: 991px) 100vw, 974.9913940429688px" loading="lazy" srcset="{{ 'Group-773-p-500.webp' | asset_url }} 500w, {{ 'Group-773-p-800.webp' | asset_url }} 800w, {{ 'Group-773.webp' | asset_url }} 975w">
+<img class="mobile_timeline_images_item _8" src="{{ 'Group-773.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'Group-773-p-500.webp' | asset_url }} 500w, {{ 'Group-773-p-800.webp' | asset_url }} 800w, {{ 'Group-773.webp' | asset_url }} 975w">
 {% endif %}</div>
                 </div>
                 <div class="mobile_timeline_info_layout">
@@ -326,7 +326,7 @@
             "id": "text_timeline_heading_4",
             "type": "text",
             "label": "Timeline Heading 4",
-            "default": "THE BEGINNING OF THE FARMING"
+            "default": "A Focus on sustainability"
         },
         {
             "id": "text_timeline_paragraph_4",

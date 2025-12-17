@@ -1038,7 +1038,8 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                         <div class="mini-cart_line-item no-scrollbar">
                           <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
                             <template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="images/BALMAUD-GIN-POS-V4-POST-copy.webp" alt="" sizes="100vw" loading="lazy" srcset="{{ 'BALMAUD-GIN-POS-V4-POST-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD-GIN-POS-V4-POST-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD-GIN-POS-V4-POST-copy.webp' | asset_url }} 984w" x-bind:src="product.image">
+    <li li-element="mini-cart-item" class="mini-cart_line-item_item">
+                              <a li-js-object:href="product.url" href="#" class="mini-cart_line-item_link-wrapper w-inline-block" x-bind:href="product.url"><img class="mini-cart_line-item_img" src="images/BALMAUD-GIN-POS-V4-POST-copy.webp" alt="" sizes="100vw" loading="lazy" srcset="{{ 'BALMAUD-GIN-POS-V4-POST-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD-GIN-POS-V4-POST-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD-GIN-POS-V4-POST-copy.webp' | asset_url }} 984w" x-bind:src="product.image"></a>
                               <div class="mini-cart_line-item_product-info">
                                 <div class="mini-cart_line-item_title_wrapper">
                                   <div li-js-object="product.title" class="text-size-regular" x-text="product.title">Highland Dry Gin</div>
