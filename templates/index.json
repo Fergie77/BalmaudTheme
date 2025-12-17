@@ -80,9 +80,9 @@
       "type": "legacy_casks",
       "settings": {
         "text_heading": "Own your Legacy",
-        "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
+        "text_paragraph": "From the fields of the North East of Scotland, Balmaud was born, a Highland Single Estate Distillery where every step of the whisky-making journey takes place on one site, from grain to glass.Crafted from barley grown on our own land and matured in our bonded warehouses, each cask marks a rare opportunity to own a piece of Balmaud’s earliest spirit – the beginning of a new legacy in Scotch whisky.",
         "text_button_text": "Shop Now",
-        "url_link": ""
+        "url_link": "shopify://pages/private-casks"
       }
     },
     "manifesto_2": {
