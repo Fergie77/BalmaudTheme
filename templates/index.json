@@ -21,6 +21,11 @@
         "background-color": "rgba(0,0,0,0)"
       }
     },
+    "spacer_small_cjm4NX": {
+      "type": "spacer_small",
+      "name": "Spacer Small",
+      "settings": {}
+    },
     "legacy": {
       "type": "legacy",
       "disabled": true,
@@ -103,6 +108,7 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "home_hero",
+    "spacer_small_cjm4NX",
     "legacy",
     "detail_divider",
     "about",
