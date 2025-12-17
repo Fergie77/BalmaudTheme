@@ -11,11 +11,22 @@
   "sections": {
     "home_hero": {
       "type": "home_hero",
-      "settings": {}
+      "settings": {
+        "text_heading": "Nothing Ordinary",
+        "text_paragraph": "We’re proud to announce the release of Balmaud Scottish Dry Gin, the first spirit of Balmaud Distillery",
+        "text_button_text": "Shop Now",
+        "url_link": "",
+        "image_image": "shopify://shop_images/BALMAUD_TASTING_WIDE_v2_1_copy.webp",
+        "image_mobile_image": "shopify://shop_images/Group_3.webp",
+        "background-color": "rgba(0,0,0,0)"
+      }
     },
     "legacy": {
       "type": "legacy",
-      "settings": {}
+      "settings": {
+        "text_heading": "A LEGACY<br>IN THE MAKING",
+        "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients."
+      }
     },
     "detail_divider": {
       "type": "detail_divider",
@@ -27,7 +38,12 @@
         "about-block": {
           "type": "about-block",
           "name": "About Block",
-          "settings": {}
+          "settings": {
+            "text_heading": "The Distillery",
+            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br>",
+            "text_button_text": "Shop Now",
+            "url_link": ""
+          }
         }
       },
       "block_order": [
@@ -37,19 +53,35 @@
     },
     "manifesto": {
       "type": "manifesto",
-      "settings": {}
+      "settings": {
+        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
+        "text_heading": "Old School Farmers<br>New School Distillers"
+      }
     },
     "legacy_casks": {
       "type": "legacy_casks",
-      "settings": {}
+      "settings": {
+        "text_heading": "Own your Legacy",
+        "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
+        "text_button_text": "Shop Now",
+        "url_link": ""
+      }
     },
     "manifesto_2": {
       "type": "manifesto_2",
-      "settings": {}
+      "settings": {
+        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
+        "text_heading": "Find your Unordinary way to drink",
+        "text_button_text": "Shop Now",
+        "url_link": ""
+      }
     },
     "diary": {
       "type": "diary",
-      "settings": {}
+      "settings": {
+        "text_button_text": "Shop Now",
+        "url_link": ""
+      }
     }
   },
   "layout": "theme",
