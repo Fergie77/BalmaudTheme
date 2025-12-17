@@ -23,8 +23,9 @@
     },
     "legacy": {
       "type": "legacy",
+      "disabled": true,
       "settings": {
-        "text_heading": "A LEGACY<br>IN THE MAKING",
+        "text_heading": "A LEGACYIN THE MAKING",
         "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients."
       }
     },
@@ -35,18 +36,30 @@
     "about": {
       "type": "about",
       "blocks": {
+        "about_block_9kfif9": {
+          "type": "about-block",
+          "settings": {
+            "image_image": "shopify://shop_images/Mask_group.webp",
+            "text_heading": "The Distillery",
+            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
+            "text_button_text": "Shop Now",
+            "url_link": "shopify://pages/our-story"
+          }
+        },
         "about-block": {
           "type": "about-block",
           "name": "About Block",
           "settings": {
-            "text_heading": "The Distillery",
-            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.<br>",
+            "image_image": "shopify://shop_images/Mask_group-1.webp",
+            "text_heading": "Sustainability",
+            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
             "text_button_text": "Shop Now",
-            "url_link": ""
+            "url_link": "shopify://pages/our-story"
           }
         }
       },
       "block_order": [
+        "about_block_9kfif9",
         "about-block"
       ],
       "settings": {}
@@ -55,7 +68,7 @@
       "type": "manifesto",
       "settings": {
         "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
-        "text_heading": "Old School Farmers<br>New School Distillers"
+        "text_heading": "Old School Farmers New School Distillers"
       }
     },
     "legacy_casks": {
