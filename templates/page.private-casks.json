@@ -29,7 +29,8 @@
     "casks_sign_up_8xbKTh": {
       "type": "casks_sign_up",
       "custom_css": [
-        "/* Desktop only */@media (max-width: 400px) {.casks_sign-up_wrapper {display: none; }}"
+        "/* Default (desktop/tablet): hide */.casks_sign-up_wrapper {display: none;}",
+        "/* Mobile: show */@media (max-width: 767px) {.casks_sign-up_wrapper {display: block; /* or flex, depending on your layout */ }}"
       ],
       "name": "Casks Sign Up",
       "settings": {
