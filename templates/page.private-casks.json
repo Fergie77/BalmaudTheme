@@ -29,7 +29,7 @@
     "casks_sign_up_8xbKTh": {
       "type": "casks_sign_up",
       "custom_css": [
-        "/* Desktop only */@media (min-width: 400px) and (orientation: portrait) {.casks_sign-up_wrapper {display: none; }}"
+        "/* Desktop only */@media (max-width: 400px) {.casks_sign-up_wrapper {display: none; }}"
       ],
       "name": "Casks Sign Up",
       "settings": {
