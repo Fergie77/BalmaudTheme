@@ -13,7 +13,7 @@
       "type": "product_hero",
       "settings": {
         "text_estimated_delivery_text": "Estimated Delivery Date: 20/12/25",
-        "text_pre_order_info_text": "Note: this is a pre-order. Your product will ship based on the estimated delivery date."
+        "text_pre_order_info_text": ""
       }
     },
     "floating_add_to_cart": {
