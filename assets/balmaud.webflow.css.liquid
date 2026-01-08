@@ -1176,6 +1176,15 @@ figcaption {
   border-color: #000;
 }
 
+.button:where(.w-variant-a2f8a499-d831-c0f4-774e-7ba4add0c3ea) {
+  position: static;
+}
+
+.button:where(.w-variant-a2f8a499-d831-c0f4-774e-7ba4add0c3eb) {
+  color: var(--text-color--text-primary);
+  border-color: #000;
+}
+
 .button:hover {
   color: var(--text-color--text-primary);
   background-color: #fff;
@@ -1186,7 +1195,7 @@ figcaption {
   color: var(--text-color--text-alternate);
 }
 
-.button:hover:where(.w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31) {
+.button:hover:where(.w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31), .button:hover:where(.w-variant-a2f8a499-d831-c0f4-774e-7ba4add0c3eb) {
   color: var(--text-color--text-alternate);
   background-color: #000;
 }
@@ -1262,6 +1271,10 @@ figcaption {
 .button.is-dark:hover {
   border-color: var(--base-color-neutral--black);
   background-color: var(--base-color-neutral--white);
+}
+
+.button.is-absolute-button {
+  position: static;
 }
 
 .fs-styleguide_classes {
@@ -1975,7 +1988,6 @@ figcaption {
   grid-auto-flow: row;
   grid-template-columns: subgrid;
   display: grid;
-  transform: translate(0);
 }
 
 .hero_info_layout.is-flex {
@@ -4166,7 +4178,7 @@ figcaption {
   width: 100%;
 }
 
-.button_link, .absolute-wrapper, .absolute-wrapper:where(.w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360) {
+.button_link, .absolute-wrapper, .absolute-wrapper:where(.w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360), .absolute-wrapper:where(.w-variant-a2f8a499-d831-c0f4-774e-7ba4add0c3ea) {
   position: absolute;
   inset: 0%;
 }

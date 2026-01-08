@@ -33,7 +33,7 @@
         <input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
                       <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to Basket</a>
                       <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
-<a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout($event, true)">Buy Now</a>
+<a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" @click="addToCartAndCheckout($event, true)">Pre Order</a>
                             </div>
     </template>
                     <template x-if="!selected_or_first_available_variant.available">
@@ -86,7 +86,7 @@
                 <div class="product-hero_slider_slide"><img data-delay="0.33" class="product-hero_slider_image" src="{{ product.featured_image.src | image_url: width: 1500 }}" balmaud-animation="fade-in" alt="{{ product.featured_image.alt }}" sizes="(max-width: 991px) 100vw, 983.9931030273438px" li-object:src="product.featured_image.src | image_url: width: 1500" loading="lazy" li-object:alt="product.featured_image.alt" srcset="{{ 'BALMAUD-GIN-POS-V4-POST-copy-p-500.webp' | asset_url }} 500w, {{ 'BALMAUD-GIN-POS-V4-POST-copy-p-800.webp' | asset_url }} 800w, {{ 'BALMAUD-GIN-POS-V4-POST-copy.webp' | asset_url }} 984w"></div>
               </div>
             </div>
-            <div balmaud-animation="fade-in" id="w-node-_9f452a19-4186-02fb-a964-0afd390a7922-b3d77f98" class="product-hero_background-image_wrapper"><img src="{{ 'Frame-8.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'Frame-8.webp' | asset_url }} 500w, {{ 'Frame-8.webp' | asset_url }} 800w, {{ 'Frame-8.webp' | asset_url }} 1080w, {{ 'Frame-8.webp' | asset_url }} 1600w, {{ 'Frame-8.webp' | asset_url }} 1756w" alt="" class="product-hero_background-image hide-tablet"><img src="{{ 'Frame-7.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'Frame-7-p-500.webp' | asset_url }} 500w, {{ 'Frame-7-p-800.webp' | asset_url }} 800w, {{ 'Frame-7-p-1080.webp' | asset_url }} 1080w, {{ 'Frame-7-p-1600.webp' | asset_url }} 1600w, {{ 'Frame-7.webp' | asset_url }} 1756w" alt="" class="product-hero_background-image show-tablet">
+            <div balmaud-animation="fade-in" id="w-node-_9f452a19-4186-02fb-a964-0afd390a7922-b3d77f98" class="product-hero_background-image_wrapper"><img src="{{ 'Frame-8.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'Frame-8-p-500.webp' | asset_url }} 500w, {{ 'Frame-8-p-800.webp' | asset_url }} 800w, {{ 'Frame-8-p-1080.webp' | asset_url }} 1080w, {{ 'Frame-8-p-1600.webp' | asset_url }} 1600w, {{ 'Frame-8.webp' | asset_url }} 1756w" alt="" class="product-hero_background-image hide-tablet"><img src="{{ 'Frame-7.webp' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'Frame-7-p-500.webp' | asset_url }} 500w, {{ 'Frame-7-p-800.webp' | asset_url }} 800w, {{ 'Frame-7-p-1080.webp' | asset_url }} 1080w, {{ 'Frame-7-p-1600.webp' | asset_url }} 1600w, {{ 'Frame-7.webp' | asset_url }} 1756w" alt="" class="product-hero_background-image show-tablet">
               <div class="product-hero_background-image_text-wrapper">
                 <div class="product-hero_background-image_top-text_flex">
                   <div class="product-hero_background-image_text">Nothing<br>Wasted</div>
@@ -111,7 +111,7 @@
             "id": "text_pre_order_info_text",
             "type": "text",
             "label": "Pre Order Info Text",
-            "default": "."
+            "default": "Note: this is a pre-order. Your product will ship based on the estimated delivery date."
         }
     ],
     "presets": [
