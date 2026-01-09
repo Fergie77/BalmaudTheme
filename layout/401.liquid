@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submitYearButton");
   const consentCheckbox = document.querySelector(".age-gate_checkbox");
   const mainContent = document.querySelector(".main-wrapper");
+  const footerSection = document.querySelector(".footer_section");
   const ageGate = document.getElementById("ageGate");
   const ageGateComponent = document.querySelector(".age-gate_component");
   const errorMsg = document.getElementById("errorMsg");
@@ -118,11 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ageGate.style.display = "flex";
     ageGateComponent.style.display = "flex";
     mainContent.style.display = "none";
+    footerSection.style.display = "none";
   }
   function showContent() {
     ageGate.style.display = "none";
     ageGateComponent.style.display = "none";
     mainContent.style.display = "block";
+    footerSection.style.display = "block";
   }
   if (localStorage.getItem("ageVerified") === "true") {
     showContent();

@@ -591,8 +591,12 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
       <div data-animation="default" class="nav_component w-nav" data-wf--navbar--variant="base" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="396176c6-906a-9f74-c6d0-8a4663dfdea9" role="banner" data-duration="400">
         <div class="nav_ticker_container">
           <div data-preload="" class="nav_ticker_wrapper">
-            <div class="nav_ticker_text">Scottish dry gin - now available</div>
-            <div class="nav_ticker_text">Scottish dry gin - now available</div>
+            <div class="nav_ticker_text">
+{{ section.settings.text_ticker_text }}
+</div>
+            <div class="nav_ticker_text">
+{{ section.settings.text_ticker_text }}
+</div>
           </div>
         </div>
         <div class="nav_background"></div>
@@ -1224,6 +1228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submitYearButton");
   const consentCheckbox = document.querySelector(".age-gate_checkbox");
   const mainContent = document.querySelector(".main-wrapper");
+  const footerSection = document.querySelector(".footer_section");
   const ageGate = document.getElementById("ageGate");
   const ageGateComponent = document.querySelector(".age-gate_component");
   const errorMsg = document.getElementById("errorMsg");
@@ -1231,11 +1236,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ageGate.style.display = "flex";
     ageGateComponent.style.display = "flex";
     mainContent.style.display = "none";
+    footerSection.style.display = "none";
   }
   function showContent() {
     ageGate.style.display = "none";
     ageGateComponent.style.display = "none";
     mainContent.style.display = "block";
+    footerSection.style.display = "block";
   }
   if (localStorage.getItem("ageVerified") === "true") {
     showContent();
