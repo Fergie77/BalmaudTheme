@@ -69,6 +69,16 @@
       ],
       "settings": {}
     },
+    "manifesto_2": {
+      "type": "manifesto_2",
+      "settings": {
+        "image_image": "shopify://shop_images/BALMAUD_HERO.webp",
+        "text_paragraph": "",
+        "text_heading": "Find your Unordinary way to drink",
+        "text_button_text": "Shop Now",
+        "url_link": "shopify://products/scottish-dry-gin"
+      }
+    },
     "manifesto": {
       "type": "manifesto",
       "settings": {
@@ -88,16 +98,6 @@
         "url_link": "shopify://pages/private-casks"
       }
     },
-    "manifesto_2": {
-      "type": "manifesto_2",
-      "settings": {
-        "image_image": "shopify://shop_images/BALMAUD_HERO.webp",
-        "text_paragraph": "",
-        "text_heading": "Find your Unordinary way to drink",
-        "text_button_text": "Shop Now",
-        "url_link": "shopify://products/scottish-dry-gin"
-      }
-    },
     "diary": {
       "type": "diary",
       "disabled": true,
@@ -115,9 +115,9 @@
     "legacy",
     "detail_divider",
     "about",
-    "manifesto",
-    "legacy_casks",
     "manifesto_2",
+    "legacy_casks",
+    "manifesto",
     "diary"
   ]
 }
