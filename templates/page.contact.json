@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "legacy": {
+            "type": "legacy"
+        }
+    },
+    "layout": "page.contact",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "legacy"
+    ]
+}
