@@ -7,13 +7,13 @@
 </h2>
               <div id="w-node-_2ced6cf9-4e86-a443-cf4d-e7a59feec946-aee46dd2" class="no-trim w-richtext"> {{ section.settings.richtext_richtext }} </div>
               <div id="w-node-_831c6caa-cc83-ccec-49bb-1e3e68c8cd9a-aee46dd2" class="legacy_aside">{% if section.settings.image_desktop_image %}
-{{ section.settings.image_desktop_image | image_url: width: 1000 | image_tag: class: 'contact-hero_image hide-mobile-landscape', sizes: '(max-width: 479px) 100vw, 243.28994750976562px', loading: 'lazy' }}
+{{ section.settings.image_desktop_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'contact-hero_image hide-mobile-landscape' }}
 {% else %}
-<img class="contact-hero_image hide-mobile-landscape" src="{{ 'BD_MAP-copy-2.webp' | asset_url }}" alt="" sizes="(max-width: 479px) 100vw, 243.28994750976562px" loading="lazy" srcset="{{ 'BD_MAP-copy-2.webp' | asset_url }} 500w, {{ 'BD_MAP-copy-2.webp' | asset_url }} 800w, {{ 'BD_MAP-copy-2.webp' | asset_url }} 1080w, {{ 'BD_MAP-copy-2.webp' | asset_url }} 1600w, {{ 'BD_MAP-copy-2.webp' | asset_url }} 1622w">
+<img src="{{ 'BD_MAP-copy-2.webp' | asset_url }}" loading="lazy" alt="" class="contact-hero_image hide-mobile-landscape">
 {% endif %}{% if section.settings.image_mobile_image %}
-{{ section.settings.image_mobile_image | image_url: width: 1000 | image_tag: class: 'contact-hero_image show-mobile-landscape', sizes: '239.9913330078125px', loading: 'lazy' }}
+{{ section.settings.image_mobile_image | image_url: width: 1000 | image_tag: class: 'contact-hero_image show-mobile-landscape', sizes: '(max-width: 767px) 100vw, 745.9896240234375px, 239.9913330078125px', loading: 'lazy' }}
 {% else %}
-<img class="contact-hero_image show-mobile-landscape" src="{{ 'BD_MAP_MOBILE-copy-1.webp' | asset_url }}" alt="" sizes="239.9913330078125px" loading="lazy" srcset="{{ 'BD_MAP_MOBILE-copy-1.webp' | asset_url }} 500w, {{ 'BD_MAP_MOBILE-copy-1.webp' | asset_url }} 746w">
+<img class="contact-hero_image show-mobile-landscape" src="{{ 'BD_MAP_MOBILE-copy-1.webp' | asset_url }}" alt="" sizes="(max-width: 767px) 100vw, 745.9896240234375px, 239.9913330078125px" loading="lazy" srcset="{{ 'BD_MAP_MOBILE-copy-1-p-500.webp' | asset_url }} 500w, {{ 'BD_MAP_MOBILE-copy-1.webp' | asset_url }} 746w">
 {% endif %}</div>
             </div>
           </div>
