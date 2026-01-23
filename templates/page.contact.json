@@ -11,7 +11,11 @@
   "sections": {
     "contact": {
       "type": "contact",
-      "settings": {}
+      "settings": {
+        "text_heading": "Located in Aberdeenshire",
+        "richtext_richtext": "<p><br/>                Balmaud is a working Highland Single Estate Distillery, built with purpose and care. Visits are available by appointment only, allowing us to give each guest the time, attention, and experience the place deserves.<br/>                ‍<br/>                If you’d like to arrange a visit, discuss our spirits, or get in touch for any other enquiry, we’d be pleased to hear from you.<br/>                ‍<br/>                You can contact us by phone on </p>",
+        "image_desktop_image": "shopify://shop_images/03_1.jpg"
+      }
     }
   },
   "layout": "page.contact",
