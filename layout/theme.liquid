@@ -12,9 +12,9 @@
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
-  <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
-  <link href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
-  <link href="{{ 'balmaud.webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css" defer>
+  <link href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css" defer>
+  <link href="{{ 'balmaud.webflow.css' | asset_url }}" rel="stylesheet" type="text/css" defer>
   {%- if request.page_type == 'index' -%}
 <link
   rel="preload"
@@ -32,7 +32,6 @@
 {%- endif -%}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://use.typekit.net">
 
 <script>
   // Load Google WebFont loader, then run WebFont.load when it's ready
@@ -58,7 +57,6 @@
     var tk = document.createElement('script');
     tk.src = 'https://use.typekit.net/tqd4ijo.js';
     tk.async = true;
-    tk.defer = true;
     tk.onload = function () {
       try { Typekit.load(); } catch (e) {}
     };
