@@ -16,7 +16,8 @@
   <link href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css" defer>
   <link href="{{ 'balmaud.webflow.css' | asset_url }}" rel="stylesheet" type="text/css" defer>
   {%- if request.page_type == 'index' -%}
-<link
+<!--
+    <link
   rel="preload"
   as="image"
   href="{{ 'BALMAUD_TASTING_WIDE-copy-p-1080.webp' | asset_url }}"
@@ -29,6 +30,8 @@
   imagesizes="100vw"
   fetchpriority="high"
 />
+
+  -->
 {%- endif -%}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
