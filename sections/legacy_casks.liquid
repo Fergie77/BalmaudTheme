@@ -26,23 +26,13 @@
               </div>
             </div>
           </div>{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content is-dark' }}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content is-dark hide-tablet' }}
 {% else %}
-<img
-  src="{{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '2000x' }}"
-  srcset="
-    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '600x' }} 600w,
-    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '900x' }} 900w,
-    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '1200x' }} 1200w,
-    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '1600x' }} 1600w,
-    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '2000x' }} 2000w
-  "
-  sizes="(max-width: 767px) 100vw, 2000px"
-  loading="lazy"
-  balmaud-animation="content-fade-in"
-  alt=""
-  class="hero_background-content is-dark"
-/>
+<img src="{{ 'April_balmaud_shoot-6-1.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content is-dark hide-tablet">
+{% endif %}{% if section.settings.image_mobile_image %}
+{{ section.settings.image_mobile_image | image_url: width: 800 | image_tag: class: 'hero_background-content show-tablet', balmaud-animation: 'content-fade-in', sizes: '100vw', loading: 'lazy' }}
+{% else %}
+<img class="hero_background-content show-tablet" src="{{ 'April_balmaud_shoot-6-1.webp' | asset_url }}" balmaud-animation="content-fade-in" alt="" sizes="100vw" loading="lazy" srcset="{{ 'April_balmaud_shoot-6-1-p-500.webp' | asset_url }} 500w, {{ 'April_balmaud_shoot-6-1-p-800.webp' | asset_url }} 800w, {{ 'April_balmaud_shoot-6-1-p-1080.webp' | asset_url }} 1080w, {{ 'April_balmaud_shoot-6-1-p-1600.webp' | asset_url }} 1600w, {{ 'April_balmaud_shoot-6-1-p-2000.webp' | asset_url }} 2000w, {{ 'April_balmaud_shoot-6-1-p-2600.webp' | asset_url }} 2600w, {{ 'April_balmaud_shoot-6-1.webp' | asset_url }} 2832w">
 {% endif %}
         </div> {% schema %} {
     "tag": "section",
@@ -76,6 +66,11 @@
             "id": "image_image",
             "type": "image_picker",
             "label": "Image"
+        },
+        {
+            "id": "image_mobile_image",
+            "type": "image_picker",
+            "label": "Mobile Image"
         }
     ],
     "presets": [
