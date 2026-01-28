@@ -28,7 +28,21 @@
           </div>{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', balmaud-animation: 'content-fade-in', class: 'hero_background-content is-dark' }}
 {% else %}
-<img src="{{ 'April_balmaud_shoot-6-1.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content is-dark">
+<img
+  src="{{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '2000x' }}"
+  srcset="
+    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '600x' }} 600w,
+    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '900x' }} 900w,
+    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '1200x' }} 1200w,
+    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '1600x' }} 1600w,
+    {{ 'April_balmaud_shoot-6-1.webp' | asset_img_url: '2000x' }} 2000w
+  "
+  sizes="(max-width: 767px) 100vw, 2000px"
+  loading="lazy"
+  balmaud-animation="content-fade-in"
+  alt=""
+  class="hero_background-content is-dark"
+/>
 {% endif %}
         </div> {% schema %} {
     "tag": "section",
