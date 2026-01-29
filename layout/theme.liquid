@@ -555,10 +555,13 @@ label {
   </style>
 
   <link defer href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
-  <link defer href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
-  <!--<link defer href="{{ 'balmaud.webflow.css' | asset_url }}" rel="stylesheet" type="text/css">-->
+  <!--<link defer href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <link defer href="{{ 'balmaud.webflow.css' | asset_url }}" rel="stylesheet" type="text/css">-->
 
   <link rel="preload" href="{{ 'balmaud.webflow.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+<link rel="preload" href="{{ 'webflow.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
 <!--<link href="https://fonts.googleapis.com" rel="preconnect">
