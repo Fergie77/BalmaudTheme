@@ -12,8 +12,8 @@
     "contact": {
       "type": "contact",
       "settings": {
-        "text_heading": "Located in Aberdeenshire",
-        "richtext_richtext": "<p>Balmaud is a working Highland Single Estate Distillery, built with purpose and care. Visits are available by appointment only, allowing us to give each guest the time, attention, and experience the place deserves.</p><p>‍</p><p>If you’d like to arrange a visit, discuss our spirits, or get in touch for any other enquiry, we’d be pleased to hear from you.</p><p>‍</p><p>You can contact us by phone on <a href=\"tel:+441328271028\">+44 132 827 1028</a>, or by email at <a href=\"mailto:info@balmauddistillery.com\">info@balmauddistillery.com </a></p><p>‍</p><p>We’ll respond as soon as possible.</p>",
+        "text_heading": "Located in Rural Aberdeenshire",
+        "richtext_richtext": "<p>Balmaud is a working Highland Single Estate Distillery, built with purpose and care. Visits are available by appointment only, allowing us to give each guest the time, attention, and experience the place deserves.</p><p>‍</p><p>If you’d like to arrange a visit, discuss our spirits, or get in touch for any other enquiry, we’d be pleased to hear from you.</p><p>‍</p><p>You can contact us by phone on <a href=\"tel: +44 (0) 1888 531 100\" title=\"tel: +44 (0) 1888 531 100\">+44 (0) 1888 531 100,</a> or by email at <a href=\"mailto:info@balmauddistillery.com\">info@balmauddistillery.com </a></p><p>‍</p><p>We’ll respond as soon as possible.</p>",
         "image_desktop_image": "shopify://shop_images/BD_MAP_copy_2.webp",
         "image_mobile_image": "shopify://shop_images/BD_MAP_MOBILE_copy_1.webp"
       }
